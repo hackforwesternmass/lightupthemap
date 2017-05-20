@@ -1,0 +1,17 @@
+uuid: 24e4d2d0-f70b-4116-b682-79cec62fd047
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Action
+type: action
+description: 'Content type for taking an action'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true
