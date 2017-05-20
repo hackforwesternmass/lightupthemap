@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb766841005ecf4b3ec4ecd8b4c98df4",
+    "content-hash": "881b6602cde0b4608e152a6ebde631b7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -615,6 +615,60 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "drupal/cog",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/cog",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cog-8.x-1.7.zip",
+                "reference": null,
+                "shasum": "6ff95079a41e75dd0c78135cb6e71e7f54c00e01"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1490994483"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "aellison",
+                    "homepage": "https://www.drupal.org/user/277818"
+                },
+                {
+                    "name": "grasmash",
+                    "homepage": "https://www.drupal.org/user/455714"
+                },
+                {
+                    "name": "jenter",
+                    "homepage": "https://www.drupal.org/user/186584"
+                },
+                {
+                    "name": "sarahjean",
+                    "homepage": "https://www.drupal.org/user/553728"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/cog",
+            "support": {
+                "source": "http://cgit.drupalcode.org/cog"
+            }
         },
         {
             "name": "easyrdf/easyrdf",
