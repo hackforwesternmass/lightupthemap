@@ -23,15 +23,5 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
-$settings['install_profile'] = 'standard';
-$databases['default']['default'] = array (
-  'database' => 'light_up',
-  'username' => 'root',
-  'password' => 'password',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+
 $settings['hash_salt'] = 'c1Luva8cclI8ixxKSHToOmoRGmEbUwpsnoFF26YjkM8JrBJJvYRA6XzrgPh3f4XyJOFlfRAJ0Q';
