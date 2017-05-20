@@ -14,3 +14,12 @@ global_styles:
   css:
     theme:
       css/styles.css: {}
+leaflet:
+  css:
+    theme:
+      css/leaflet.css: {}
+  js:
+    js/leaflet.js: {}
+    js/map.js: {}
+  dependencies:
+    - core/jquery

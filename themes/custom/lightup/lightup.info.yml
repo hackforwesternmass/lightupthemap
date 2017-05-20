@@ -7,6 +7,7 @@ libraries:
   - lightup/fonts
   - lightup/fontawesome
   - lightup/global_styles
+  - lightup/leaflet
 regions:
   branding: Branding
   header: Header
