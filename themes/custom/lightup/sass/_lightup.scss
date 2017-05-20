@@ -1,0 +1,19 @@
+//////////////////////////////////
+// Custom CSS for Lightup ///////
+//////////////////////////////////
+
+// added per http://savaslabs.com/2015/07/06/map-in-drupal-8.html
+.map--front {
+  // Set these to whatever you want.
+  height: 100vh;
+  width: 100%;
+}
+
+
+#wsite-title {
+  font-family: "Saginaw" !important;
+  font-weight: 700 !important;
+  color: #76b3b8 !important;
+  text-transform: none !important;
+  letter-spacing: 3px !important;
+}
