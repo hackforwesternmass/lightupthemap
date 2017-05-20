@@ -1,0 +1,21 @@
+uuid: 3401c2ca-6dc5-4284-aa43-09cefacb3965
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_coordinates
+    - node.type.action
+  module:
+    - geofield
+id: node.action.field_location_coordinates
+field_name: field_location_coordinates
+entity_type: node
+bundle: action
+label: 'Location coordinates'
+description: 'Enter coordinates'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield
