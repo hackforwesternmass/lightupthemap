@@ -6,10 +6,10 @@
 
     // Create map and set center and zoom.
     var map = L.map('map', {
-        zoomControl: false,
+        zoomControl: true,
         scrollWheelZoom: false,
-        center: [42.2570286, -71.8785668],
-        zoom: 8
+        center: [42.26, -71.70],
+        zoom: 9
     });
 
     // Add basemap to map.

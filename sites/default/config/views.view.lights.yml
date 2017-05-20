@@ -180,7 +180,7 @@ display:
           click_sort_column: value
           type: geofield_default
           settings:
-            output_format: json
+            output_format: geojson
           group_column: value
           group_columns: {  }
           group_rows: true
