@@ -1,0 +1,22 @@
+uuid: b6b940eb-7613-43e4-97a8-08ecc716de9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - lightup
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: lightup_help
+theme: lightup
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

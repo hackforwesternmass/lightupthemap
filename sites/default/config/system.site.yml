@@ -1,0 +1,14 @@
+uuid: a6c8f5c0-895c-4d9d-b154-0b67a14fa093
+name: 'Light Up The Map'
+mail: rick@flowmediadesign.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
