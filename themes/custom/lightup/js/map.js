@@ -17,6 +17,8 @@
 
     L.Icon.Default.imagePath = '/themes/custom/lightup/images/leaflet/';
 
+    var markerClusters = L.markerClusterGroup();
+
     // Add points.
     function addDataToMap(data, map) {
         var dataLayer = L.geoJson(data, {
@@ -25,12 +27,19 @@
                 layer.bindPopup(popupText);
             }
         });
-        dataLayer.addTo(map);
+        // this is for no clustering
+        // dataLayer.addTo(map);
+        // this is for clustering
+        markerClusters.addLayer( dataLayer );
     }
 
     $.getJSON('/lights', function(data) {
         addDataToMap(data, map);
     });
 
+    map.addLayer( markerClusters );
+
 })(jQuery);
+
+
 

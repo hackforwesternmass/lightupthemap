@@ -18,8 +18,11 @@ leaflet:
   css:
     theme:
       css/leaflet.css: {}
+      Leaflet_markercluster/dist/MarkerCluster.Default.css: {}
+      Leaflet_markercluster/dist/MarkerCluster.css: {}
   js:
     js/leaflet.js: {}
+    Leaflet_markercluster/dist/leaflet.markercluster.js: {}
     js/map.js: {}
   dependencies:
     - core/jquery
