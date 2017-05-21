@@ -4,15 +4,28 @@
   }
 }
 
+#block-lightup-branding {
+ vertical-align: bottom;
+}
 .site-branding-text {
   padding: 30px 10px 10px;
-  font-size: 135%;
+  margin-bottom: 15px;
+  font-size: 300%; //135%;
+  vertical-align: bottom;
+  display: inline-block;
+  a {
+    color: $yellow;
+  }
+  a:hover {
+    color: $yellow;
+  }
 }
 // logo values
 div.site-branding a.logo {
   width: 105px;
-  display: block;
+ // display: block;
+  display: inline-block;
   padding: 5px 5px 0;
-  float: left;
+ // float: left;
   margin-bottom: 5px;
 }
