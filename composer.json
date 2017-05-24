@@ -10,7 +10,8 @@
         "drupal/geolocation": "^1.10",
         "drupal/geofield": "^1.0@alpha",
         "drupal/views_geojson": "1.x-dev",
-        "drupal/examples": "1.x-dev"
+        "drupal/examples": "1.x-dev",
+        "drupal/formblock": "^1.0@beta"
     },
     "replace": {
         "drupal/core": "~8.3"
