@@ -9,7 +9,7 @@ _core:
 id: lightup_local_actions
 theme: lightup
 region: content
-weight: -6
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

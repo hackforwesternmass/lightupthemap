@@ -1,0 +1,22 @@
+uuid: fcdccd87-3792-436e-8acf-79e2d8226b82
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - lightup
+id: contentform
+theme: lightup
+region: footer
+weight: -5
+provider: null
+plugin: formblock_node
+settings:
+  id: formblock_node
+  label: 'Add your light to the map'
+  provider: node
+  label_display: visible
+  type: action
+  show_help: 0
+visibility: {  }
