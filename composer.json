@@ -11,7 +11,9 @@
         "drupal/geofield": "^1.0@alpha",
         "drupal/views_geojson": "1.x-dev",
         "drupal/examples": "1.x-dev",
-        "drupal/formblock": "^1.0@beta"
+        "drupal/formblock": "^1.0@beta",
+        "drupal/address": "~1.0",
+        "drupal/simplify": "^1.0"
     },
     "replace": {
         "drupal/core": "~8.3"
