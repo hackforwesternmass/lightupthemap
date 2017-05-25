@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.action.body
-    - field.field.node.action.field_location_coordinates
     - field.field.node.action.field_map
     - node.type.action
   module:
-    - geofield
     - geolocation
     - path
     - text
@@ -32,13 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_location_coordinates:
-    weight: 1
-    settings:
-      html5_geolocation: false
-    third_party_settings: {  }
-    type: geofield_latlon
-    region: content
   field_map:
     weight: 2
     settings:

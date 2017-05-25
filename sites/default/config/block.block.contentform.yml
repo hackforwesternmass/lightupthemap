@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - node
+    - system
   theme:
     - lightup
 id: contentform
@@ -19,4 +20,9 @@ settings:
   label_display: visible
   type: action
   show_help: 0
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
