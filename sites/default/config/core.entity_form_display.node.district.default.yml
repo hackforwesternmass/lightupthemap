@@ -1,24 +1,28 @@
-uuid: 9838ddbe-ef91-4592-a5f5-3188c11140a1
+uuid: 1110f56f-7c43-46dc-8439-3b0d8fce4ee3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.action.body
-    - field.field.node.action.field_district
-    - field.field.node.action.field_map
-    - node.type.action
+    - field.field.node.district.body
+    - field.field.node.district.field_link_representative
+    - field.field.node.district.field_link_senator
+    - field.field.node.district.field_map
+    - field.field.node.district.field_representative
+    - field.field.node.district.field_senator
+    - node.type.district
   module:
     - geolocation
+    - link
     - path
     - text
-id: node.action.default
+id: node.district.default
 targetEntityType: node
-bundle: action
+bundle: district
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 10
     settings:
       rows: 9
       summary_rows: 3
@@ -27,21 +31,28 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_district:
-    weight: 26
+  field_link_representative:
+    weight: 7
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: link_default
+    region: content
+  field_link_senator:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_map:
-    weight: 2
+    weight: 11
     settings:
       populate_address_field: ''
       target_address_field: null
@@ -75,9 +86,25 @@ content:
     third_party_settings: {  }
     type: geolocation_googlegeocoder
     region: content
+  field_representative:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_senator:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   path:
     type: path
-    weight: 7
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -85,14 +112,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 3
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
@@ -105,7 +132,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

@@ -1,38 +1,58 @@
-uuid: 3dc274f3-db03-4135-9f50-0e2a83d3a127
+uuid: 493915bf-8511-4961-ade0-f685f82b643f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.action.body
-    - field.field.node.action.field_district
-    - field.field.node.action.field_map
-    - node.type.action
+    - field.field.node.district.body
+    - field.field.node.district.field_link_representative
+    - field.field.node.district.field_link_senator
+    - field.field.node.district.field_map
+    - field.field.node.district.field_representative
+    - field.field.node.district.field_senator
+    - node.type.district
   module:
     - geolocation
+    - link
     - text
     - user
-id: node.action.default
+id: node.district.default
 targetEntityType: node
-bundle: action
+bundle: district
 mode: default
 content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_district:
-    weight: 3
-    label: above
+  field_link_representative:
+    weight: 4
+    label: inline
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: link
+    region: content
+  field_link_senator:
+    weight: 2
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_map:
-    weight: 1
+    weight: 6
     label: hidden
     settings:
       title: ''
@@ -63,6 +83,22 @@ content:
         gestureHandling: auto
     third_party_settings: {  }
     type: geolocation_map
+    region: content
+  field_representative:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_senator:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 0

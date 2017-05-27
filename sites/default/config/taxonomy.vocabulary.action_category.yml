@@ -1,0 +1,9 @@
+uuid: 78a6c71a-86c4-49f5-a14d-c969ab3ceb04
+langcode: en
+status: true
+dependencies: {  }
+name: 'Action category'
+vid: action_category
+description: 'Categories for actions'
+hierarchy: 0
+weight: 0

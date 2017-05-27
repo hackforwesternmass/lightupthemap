@@ -1,0 +1,19 @@
+uuid: 3808b5b1-c7d4-4b4c-afd9-a902c83050f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_link_senator
+field_name: field_link_senator
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
