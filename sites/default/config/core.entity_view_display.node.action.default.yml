@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.action.body
-    - field.field.node.action.field_district
     - field.field.node.action.field_map
     - node.type.action
   module:
@@ -28,5 +27,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_district: true
   field_map: true

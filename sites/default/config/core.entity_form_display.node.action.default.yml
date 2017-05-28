@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.action.body
-    - field.field.node.action.field_district
     - field.field.node.action.field_map
     - node.type.action
   module:
@@ -31,15 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_district:
-    weight: 8
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_map:
     weight: 7
     settings:
