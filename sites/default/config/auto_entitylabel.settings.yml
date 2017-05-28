@@ -1,8 +1,8 @@
 node_type_light_status: '1'
-node_type_light_pattern: '[node:field_action]-[node:author:account-name]-[node:author:created]'
+node_type_light_pattern: '[node:field_action] by [node:author:account-name] on [node:created:html_date]'
 node_type_light_php: 0
 submit: 'Save configuration'
-form_build_id: form-NFqSH4EXvV1TyFfbJfDC_8EEEOUGiFk-Dro7XDUGyxc
-form_token: iOD_6beSeBZNZQjNp0bwd3DxGG0tWsNbF0gEDvyjYP8
+form_build_id: form-ArCxcTi1_UBqWcDmce5cHyMUR_piJlAfjSObCMLFLmE
+form_token: mczhiTJeWj-TbKrjU8XrnprgrS8tMaXcj3qVaVuu5GU
 form_id: auto_entitylabel_settings_form
 op: 'Save configuration'
