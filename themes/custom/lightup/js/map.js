@@ -29,7 +29,7 @@
     });
 
 
-    var marker = L.marker([42.00, -72.50],{icon:greenIcon });
+    var marker = L.marker([41.82, -71.70],{icon:greenIcon });
     map.addLayer(marker);
 
     // example of adding a circle
@@ -43,10 +43,10 @@
 
     // example of adding a polygon
     var polygon = L.polygon([
-        [42.10, -72.30],
-        [42.10, -72.25],
-        [42.15, -72.25],
-        [42.15, -72.30]
+        [41.82, -71.43],
+        [41.82, -71.33],
+        [41.92, -71.33],
+        [41.92, -71.43]
     ]);
     map.addLayer(polygon);
     marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
