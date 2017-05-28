@@ -1,0 +1,22 @@
+uuid: cc58041c-268b-4ce0-bbde-ed37f7bd4279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.light
+  module:
+    - text
+id: node.light.body
+field_name: body
+entity_type: node
+bundle: light
+label: Body
+description: 'Add any comments you would like about this action.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

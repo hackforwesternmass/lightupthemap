@@ -1,0 +1,28 @@
+uuid: f77e3c62-ba05-4572-9331-4af5fd9ff50e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_action
+    - node.type.action
+    - node.type.light
+id: node.light.field_action
+field_name: field_action
+entity_type: node
+bundle: light
+label: Action
+description: 'Select the action you are taking. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      action: action
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
