@@ -35,7 +35,7 @@
         markerClusters.addLayer( dataLayer );
     }
 
-    $.getJSON('/lights', function(data) {
+    $.getJSON('/lights-districts', function(data) {
         addDataToMap(data, map);
     });
 
