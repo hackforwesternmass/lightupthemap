@@ -35,7 +35,7 @@
         markerClusters.addLayer( dataLayer );
     }
 
-    $.getJSON('/lights', function(data) {
+    $.getJSON('/actions', function(data) {
         addDataToMap(data, map);
     });
 

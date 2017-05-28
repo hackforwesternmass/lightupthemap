@@ -34,8 +34,8 @@
         // this is for clustering
         markerClusters.addLayer( dataLayer );
     }
-
-    $.getJSON('/lights-districts', function(data) {
+    //  changed from /lights-districts
+    $.getJSON('/districts', function(data) {
         addDataToMap(data, map);
     });
 
