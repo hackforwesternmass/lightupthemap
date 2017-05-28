@@ -47,22 +47,22 @@
         iconUrl: '/themes/custom/lightup/images/leaflet/leaf-green.png',
         //shadowUrl: 'leaf-shadow.png',
 
-        iconSize:     [38, 95], // size of the icon
+        iconSize:     [38, 50], // size of the icon
         shadowSize:   [50, 64], // size of the shadow
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62],  // the same for the shadow
+        shadowAnchor: [4, 4],  // the same for the shadow
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
-    var marker = L.marker([41.82, -71.70],{icon:greenIcon });
+    var marker = L.marker([41.75, -71.55],{icon:greenIcon });
     map.addLayer(marker);
 
     // example of adding a circle
-    var circle = L.circle([41.896539, -71.094021], {
+    var circle = L.circle([41.87, -71.20], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 2000
+        radius: 4000
     });
     map.addLayer(circle);
 
