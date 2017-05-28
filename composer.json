@@ -15,7 +15,8 @@
         "drupal/address": "~1.0",
         "drupal/simplify": "^1.0",
         "drupal/devel": "^1.0@RC",
-        "drupal/search_kint": "^1.0"
+        "drupal/search_kint": "^1.0",
+        "drupal/auto_entitylabel": "^2.0@beta"
     },
     "replace": {
         "drupal/core": "~8.3"
