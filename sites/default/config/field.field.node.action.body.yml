@@ -11,8 +11,8 @@ id: node.action.body
 field_name: body
 entity_type: node
 bundle: action
-label: Body
-description: ''
+label: Description
+description: 'Describe what this action is.'
 required: false
 translatable: true
 default_value: {  }

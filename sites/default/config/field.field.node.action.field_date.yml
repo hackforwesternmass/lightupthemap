@@ -1,0 +1,21 @@
+uuid: e805498a-7a3e-4a55-807a-3f5337cb3f50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.action
+  module:
+    - datetime
+id: node.action.field_date
+field_name: field_date
+entity_type: node
+bundle: action
+label: Date
+description: 'Enter a date for this action if appropriate (e.g an event).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

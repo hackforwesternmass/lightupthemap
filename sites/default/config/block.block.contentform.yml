@@ -1,10 +1,11 @@
 uuid: fcdccd87-3792-436e-8acf-79e2d8226b82
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - node
     - system
+    - user
   theme:
     - lightup
 id: contentform
@@ -18,7 +19,7 @@ settings:
   label: 'Add your light to the map'
   provider: node
   label_display: visible
-  type: action
+  type: light
   show_help: 0
 visibility:
   request_path:
@@ -26,3 +27,12 @@ visibility:
     pages: '<front>'
     negate: false
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      editor: editor
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
