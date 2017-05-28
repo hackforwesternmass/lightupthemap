@@ -10,7 +10,7 @@ field_name: field_representative
 entity_type: node
 bundle: district
 label: Representative
-description: ''
+description: 'Full name of representative here.'
 required: false
 translatable: false
 default_value: {  }

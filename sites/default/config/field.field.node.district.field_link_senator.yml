@@ -11,8 +11,8 @@ id: node.district.field_link_senator
 field_name: field_link_senator
 entity_type: node
 bundle: district
-label: 'Link Senator'
-description: ''
+label: 'Link to senator contact information'
+description: 'Link to the info page of the senator. Those pages can be found here: https://malegislature.gov/Legislators/Members/Senate'
 required: false
 translatable: false
 default_value: {  }

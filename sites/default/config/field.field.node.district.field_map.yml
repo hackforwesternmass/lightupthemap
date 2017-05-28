@@ -11,9 +11,9 @@ id: node.district.field_map
 field_name: field_map
 entity_type: node
 bundle: district
-label: Map
-description: ''
-required: false
+label: 'District location'
+description: 'This is a required field.  This location is used to determine the location that an action pin should be placed on the map based on the district the user is in. '
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

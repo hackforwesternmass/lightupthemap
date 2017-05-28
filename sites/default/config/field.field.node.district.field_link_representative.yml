@@ -11,8 +11,8 @@ id: node.district.field_link_representative
 field_name: field_link_representative
 entity_type: node
 bundle: district
-label: 'Link Representative'
-description: ''
+label: 'Link to representative contact information'
+description: 'Link to the info page of the representative. Those pages can be found here: https://malegislature.gov/Legislators/Members/House'
 required: false
 translatable: false
 default_value: {  }

@@ -1,0 +1,29 @@
+uuid: 9706f7fe-214b-444c-abf8-90ca1a979e04
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'create district content'
+  - 'create url aliases'
+  - 'delete own action content'
+  - 'delete own district content'
+  - 'edit any district content'
+  - 'edit own district content'
+  - 'edit terms in action_category'
+  - 'edit terms in tags'
+  - 'revert district revisions'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view action revisions'
+  - 'view all revisions'
+  - 'view district revisions'
+  - 'view own unpublished content'

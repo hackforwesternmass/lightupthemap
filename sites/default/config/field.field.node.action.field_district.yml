@@ -11,7 +11,7 @@ field_name: field_district
 entity_type: node
 bundle: action
 label: District
-description: 'Choose your district. '
+description: 'Choose your district. This is not needed if you are logged-in as a user. '
 required: false
 translatable: false
 default_value: {  }

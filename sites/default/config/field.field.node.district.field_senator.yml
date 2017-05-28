@@ -10,7 +10,7 @@ field_name: field_senator
 entity_type: node
 bundle: district
 label: Senator
-description: ''
+description: 'Full name of senator here.'
 required: false
 translatable: false
 default_value: {  }
