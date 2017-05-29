@@ -1,0 +1,16 @@
+uuid: b956cb81-865d-4c75-a91b-2bfdadc25d07
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_image
+id: image
+label: Image
+description: 'Media bundle for images.'
+type: image
+queue_thumbnail_downloads: false
+new_revision: true
+type_configuration:
+  source_field: field_image
+  gather_exif: false
+field_map: {  }

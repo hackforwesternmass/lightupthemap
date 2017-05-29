@@ -1,0 +1,10 @@
+uuid: cdcc6148-2447-452e-a922-2552bc364da7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.image_large
+label: 'Image large'
+targetEntityType: media
+cache: true
