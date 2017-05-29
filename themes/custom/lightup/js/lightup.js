@@ -17,4 +17,10 @@ var action = getUrlParameter('action');
 //console.log( action )
 jQuery(document).ready(function($){
     $("input[value=" + action + "]").prop('checked', true);
+    // stuff for actions list
+    $(".action-info").hide();
+    $( ".action-title" ).click(function() {
+        //alert( "Handler for .click() called." );
+        $( this ).next().toggle();
+    });
 });
