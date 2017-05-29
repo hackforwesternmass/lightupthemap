@@ -531,7 +531,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'Listed below are actions you can take.  '
+            value: 'Listed below are actions you can take.  Click on a link to find out more about the action.'
             format: basic_html
           plugin_id: text
     cache_metadata:

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__actions_block_2_3
 theme: lightup
 region: pre_content
-weight: -7
+weight: -8
 provider: null
 plugin: 'views_block:actions-block_2'
 settings:

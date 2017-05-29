@@ -1,0 +1,31 @@
+uuid: c2f14aa8-547e-4e57-849e-e9df1b08b18d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:25995e5d-9d16-41f6-985d-ab498df11a9e'
+  module:
+    - block_content
+    - system
+  theme:
+    - lightup
+id: district
+theme: lightup
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:25995e5d-9d16-41f6-985d-ab498df11a9e'
+settings:
+  id: 'block_content:25995e5d-9d16-41f6-985d-ab498df11a9e'
+  label: 'Find your district '
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/register
+    negate: false
+    context_mapping: {  }

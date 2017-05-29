@@ -12,8 +12,8 @@ field_name: field_district
 entity_type: user
 bundle: user
 label: District
-description: 'Choose your state representative district.  You can find your representative here. https://malegislature.gov/Search/FindMyLegislator '
-required: false
+description: 'Choose your state representative district. See instructions below to find your district.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
