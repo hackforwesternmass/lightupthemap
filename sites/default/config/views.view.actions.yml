@@ -162,7 +162,12 @@ display:
             label: ''
       title: Actions
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }
@@ -390,6 +395,8 @@ display:
         filter_groups: false
         empty: false
         header: false
+        access: false
+        footer: false
       title: 'Actions you have taken'
       filters:
         status:
@@ -472,9 +479,13 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'Actions you have taken are listed below. Thank you for taking action and adding your light to the map!'
+            value: "Actions you have taken are listed below. Thank you for taking action and adding your light to the map!\nBrowse all actions <a href=\"/browse-actions\">here</a>."
             format: basic_html
           plugin_id: text
+      access:
+        type: none
+        options: {  }
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -484,7 +495,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
       tags: {  }
   page_1:
     display_plugin: page

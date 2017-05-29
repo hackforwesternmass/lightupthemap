@@ -550,7 +550,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: districts
+      path: json-districts
       pager:
         type: none
         options:

@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/node/36\r\n/user/*"
+    pages: /node/36
     negate: false
     context_mapping: {  }

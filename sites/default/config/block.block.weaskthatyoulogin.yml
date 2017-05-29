@@ -1,0 +1,39 @@
+uuid: 0a7afa76-fca9-4f09-9a74-e2037624785c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3378ea6d-358f-4afb-8840-3f19cb33922f'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - lightup
+id: weaskthatyoulogin
+theme: lightup
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:3378ea6d-358f-4afb-8840-3f19cb33922f'
+settings:
+  id: 'block_content:3378ea6d-358f-4afb-8840-3f19cb33922f'
+  label: 'We ask that you login'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /browse-actions
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

@@ -369,7 +369,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: actions
+      path: json-actions
       pager:
         type: none
         options:
