@@ -1,4 +1,4 @@
-uuid: be5a0a3a-3419-4e69-b844-09a51f6db089
+uuid: 74898408-e8dc-403b-95ed-7f044e4dd1c9
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,13 @@ dependencies:
     - views.view.actions
   module:
     - system
-    - user
     - views
   theme:
     - lightup
-id: views_block__actions_block_2
+id: views_block__actions_block_2_3
 theme: lightup
-region: content
-weight: -2
+region: pre_content
+weight: -7
 provider: null
 plugin: 'views_block:actions-block_2'
 settings:
@@ -27,15 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/user/*\r\n/node/36"
+    pages: /node/add/light
     negate: false
     context_mapping: {  }
-  user_role:
-    id: user_role
-    roles:
-      authenticated: authenticated
-      administrator: administrator
-      editor: editor
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'

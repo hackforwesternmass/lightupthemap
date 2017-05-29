@@ -11,7 +11,7 @@ _core:
 id: lightup_help
 theme: lightup
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: help_block
 settings:
