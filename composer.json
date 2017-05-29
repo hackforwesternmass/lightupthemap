@@ -18,7 +18,12 @@
         "drupal/search_kint": "^1.0",
         "drupal/auto_entitylabel": "^2.0@beta",
         "drupal/token": "^1.0",
-        "drupal/paragraphs": "^1.1"
+        "drupal/paragraphs": "^1.1",
+        "drupal/media_entity": "^1.6",
+        "drupal/media_entity_image": "^1.2",
+        "drupal/entity_browser": "^1.0",
+        "drupal/inline_entity_form": "^1.0@beta",
+        "drupal/ctools": "^3.0"
     },
     "replace": {
         "drupal/core": "~8.3"
