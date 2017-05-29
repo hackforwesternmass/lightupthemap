@@ -14,5 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 var action = getUrlParameter('action');
-//alert (action);
-
+//console.log( action )
+jQuery(document).ready(function($){
+    $("input[value=" + action + "]").prop('checked', true);
+});

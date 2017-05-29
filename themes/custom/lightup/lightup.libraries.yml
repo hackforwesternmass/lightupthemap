@@ -16,6 +16,8 @@ global_styles:
       css/styles.css: {}
   js:
     js/lightup.js: {}
+  dependencies:
+    - core/jquery
 leaflet:
   css:
     theme:
