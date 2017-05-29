@@ -20,7 +20,10 @@ jQuery(document).ready(function($){
     // stuff for actions list
     $(".action-info").hide();
     $( ".action-title" ).click(function() {
-        //alert( "Handler for .click() called." );
+        $( this ).next().toggle();
+    });
+    $(".district-info").hide();
+    $( ".district-title" ).click(function() {
         $( this ).next().toggle();
     });
 });

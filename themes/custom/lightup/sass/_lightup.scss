@@ -25,16 +25,17 @@
   }
 }
 
-.action-title {
+.action-title,
+.district-title {
   color: #faca06;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 20px;
 }
-.action-info {
+.action-info,
+.district-info {
   padding: 10px;
   border:  #faca06 solid 1px;
-  //background-color: #CCCCCC;
 }
 
 strong {

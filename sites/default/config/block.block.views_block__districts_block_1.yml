@@ -1,0 +1,30 @@
+uuid: 0091c868-3f4e-4fc2-a28c-15af58c516ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.districts
+  module:
+    - system
+    - views
+  theme:
+    - lightup
+id: views_block__districts_block_1
+theme: lightup
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:districts-block_1'
+settings:
+  id: 'views_block:districts-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /districts
+    negate: false
+    context_mapping: {  }
