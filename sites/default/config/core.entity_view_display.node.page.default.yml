@@ -27,7 +27,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: image_large
+      view_mode: banner_image
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view

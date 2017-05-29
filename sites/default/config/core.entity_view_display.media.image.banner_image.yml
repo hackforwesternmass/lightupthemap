@@ -1,32 +1,33 @@
-uuid: f38df95e-6a74-45c1-b48a-563c226bf96a
+uuid: 077efc9d-5562-4d93-86fa-c2b93b265bff
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.banner_image
     - field.field.media.image.field_caption
     - field.field.media.image.field_image
-    - image.style.large
+    - image.style.banner
     - media_entity.bundle.image
   module:
     - image
     - text
-id: media.image.default
+id: media.image.banner_image
 targetEntityType: media
 bundle: image
-mode: default
+mode: banner_image
 content:
   field_caption:
+    type: text_default
     weight: 1
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_image:
     weight: 0
     label: hidden
     settings:
-      image_style: large
+      image_style: banner
       image_link: ''
     third_party_settings: {  }
     type: image

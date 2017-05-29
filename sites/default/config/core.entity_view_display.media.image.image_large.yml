@@ -4,16 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.image_large
+    - field.field.media.image.field_caption
     - field.field.media.image.field_image
     - image.style.large
     - media_entity.bundle.image
   module:
     - image
+    - text
 id: media.image.image_large
 targetEntityType: media
 bundle: image
 mode: image_large
 content:
+  field_caption:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_image:
     weight: 0
     label: hidden
