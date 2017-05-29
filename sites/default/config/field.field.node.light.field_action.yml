@@ -4,25 +4,22 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_action
-    - node.type.action
     - node.type.light
 id: node.light.field_action
 field_name: field_action
 entity_type: node
 bundle: light
-label: Action
-description: 'Select the action you are taking. '
+label: 'Current actions you can choose from'
+description: 'Select the action you have completed. '
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      action: action
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: actions_current
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

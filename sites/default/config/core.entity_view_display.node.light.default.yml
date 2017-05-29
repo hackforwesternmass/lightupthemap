@@ -7,29 +7,24 @@ dependencies:
     - field.field.node.light.field_action
     - node.type.light
   module:
-    - text
     - user
 id: node.light.default
 targetEntityType: node
 bundle: light
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_action:
-    weight: 102
-    label: above
+    weight: 1
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true

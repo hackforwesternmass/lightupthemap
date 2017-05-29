@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.action.body
     - field.field.node.action.field_date
+    - field.field.node.action.field_expiration_date
     - field.field.node.action.field_map
     - node.type.action
   module:
@@ -20,12 +21,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
   field_date:
-    weight: 1
+    weight: 2
     label: inline
     settings:
       format_type: medium
@@ -33,9 +34,18 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_expiration_date:
+    weight: 1
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_map:
     type: geolocation_map
-    weight: 3
+    weight: 4
     region: content
     label: above
     settings:

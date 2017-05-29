@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.action.body
     - field.field.node.action.field_date
+    - field.field.node.action.field_expiration_date
     - field.field.node.action.field_map
     - node.type.action
   module:
@@ -33,13 +34,19 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_date:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_expiration_date:
     weight: 7
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_map:
-    weight: 8
+    weight: 9
     settings:
       populate_address_field: ''
       target_address_field: null

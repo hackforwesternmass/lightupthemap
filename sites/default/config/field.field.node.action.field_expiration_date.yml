@@ -1,0 +1,24 @@
+uuid: 39d6659e-ba2c-4c69-9f5b-9a10e3574360
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expiration_date
+    - node.type.action
+  module:
+    - datetime
+id: node.action.field_expiration_date
+field_name: field_expiration_date
+entity_type: node
+bundle: action
+label: 'Expiration date'
+description: 'Actions may need to expire.  For example, after an event or a vote on a bill is over. The default is 120 days from the date you create this action.  This field is required so that old actions don''t hang around.'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: +120days
+default_value_callback: ''
+settings: {  }
+field_type: datetime

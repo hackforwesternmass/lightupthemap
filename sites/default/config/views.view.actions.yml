@@ -6,6 +6,7 @@ dependencies:
     - node.type.action
     - node.type.light
   module:
+    - datetime
     - node
     - user
 id: actions
@@ -189,6 +190,9 @@ display:
         row: false
         pager: false
         fields: false
+        title: false
+        filters: false
+        filter_groups: false
       row:
         type: fields
       pager:
@@ -260,6 +264,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      title: 'Actions you can take'
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            action: action
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_expiration_date_value:
+          id: field_expiration_date_value
+          table: node__field_expiration_date
+          field: field_expiration_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -318,7 +388,9 @@ display:
         title: false
         filters: false
         filter_groups: false
-      title: 'Actions you have already taken'
+        empty: false
+        header: false
+      title: 'Actions you have taken'
       filters:
         status:
           value: '1'
@@ -375,6 +447,34 @@ display:
         operator: AND
         groups:
           1: AND
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'No actions taken to date. Welcome and thanks for taking action! '
+            format: basic_html
+          plugin_id: text
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'Actions you have taken are listed below. Thank you for taking action and adding your light to the map!'
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

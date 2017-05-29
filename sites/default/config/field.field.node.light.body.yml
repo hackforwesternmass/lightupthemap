@@ -11,7 +11,7 @@ id: node.light.body
 field_name: body
 entity_type: node
 bundle: light
-label: Body
+label: Comments
 description: 'Add any comments you would like about this action.'
 required: false
 translatable: true

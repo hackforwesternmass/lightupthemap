@@ -17,4 +17,3 @@ permissions:
   - 'edit own light content'
   - 'search content'
   - 'use text format basic_html'
-  - 'use text format restricted_html'
