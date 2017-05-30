@@ -479,8 +479,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "Actions you have taken are listed below. Thank you for taking action and adding your light to the map!\nBrowse all actions <a href=\"/browse-actions\">here</a>."
-            format: basic_html
+            value: '<p>Actions you have taken are listed below. Thank you for taking action and adding your light to the map!</p>'
+            format: full_html
           plugin_id: text
       access:
         type: none
