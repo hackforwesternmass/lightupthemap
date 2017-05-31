@@ -39,8 +39,12 @@
         addDataToMap(data, map);
     });
 
-    map.addLayer( markerClusters );
+    $.getJSON("/themes/custom/lightup/js/from_pat.geojson",function(hoodData){
+        L.geoJson( hoodData ).addTo(map);
+    });
 
+    map.addLayer( markerClusters );
+    
 })(jQuery);
 
 
