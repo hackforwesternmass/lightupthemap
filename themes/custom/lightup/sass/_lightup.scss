@@ -19,9 +19,11 @@
 }
 
 #content {
-  a, a:link, a:visited {
-    color: #faca06;
-    text-decoration: underline;
+  .field--name-body {
+    a, a:link, a:visited {
+      color: #faca06;
+      text-decoration: underline;
+    }
   }
 }
 
