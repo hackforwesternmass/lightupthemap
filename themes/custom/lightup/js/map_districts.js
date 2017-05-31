@@ -34,17 +34,28 @@
         // this is for clustering
         markerClusters.addLayer( dataLayer );
     }
-    //  changed from /lights-districts
+    // add districts
+    function addDistrictsToMap(data, map) {
+        var dataLayer = L.geoJson(data, {
+            onEachFeature: function(feature, layer) {
+                var popupText = feature.properties.REP_DIST;
+                layer.bindPopup(popupText);
+            }
+        });
+        dataLayer.addTo(map);
+    }
+    // get the lights data
     $.getJSON('/json-districts', function(data) {
         addDataToMap(data, map);
     });
-
-    $.getJSON("/themes/custom/lightup/js/from_pat.geojson",function(hoodData){
-        L.geoJson( hoodData ).addTo(map);
+    // get the districts data
+    $.getJSON("/themes/custom/lightup/js/from_pat.geojson",function(data){
+        //L.geoJson( hoodData ).addTo(map);
+        addDistrictsToMap(data, map);
     });
 
     map.addLayer( markerClusters );
-    
+
 })(jQuery);
 
 
