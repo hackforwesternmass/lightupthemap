@@ -1,7 +1,7 @@
 (function ($) {
 
     // initial stuff: create map and add base layer
-    // Add basemap
+    // Add base map
     var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     });
@@ -9,7 +9,7 @@
     var map = L.map('map', {
         zoomControl: true,
         scrollWheelZoom: false,
-        center: [42.26, -71.70],
+        center: [42.06, -71.715],
         zoom: 9
     });
     // Add basemap to map.
@@ -50,7 +50,7 @@
     });
     // get the districts data
     $.getJSON("/themes/custom/lightup/js/from_pat.geojson",function(data){
-        //L.geoJson( hoodData ).addTo(map);
+        //L.geoJson( data ).addTo(map);
         addDistrictsToMap(data, map);
     });
 
