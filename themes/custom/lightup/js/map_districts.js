@@ -40,6 +40,12 @@
             onEachFeature: function(feature, layer) {
                 var popupText = feature.properties.REP_DIST;
                 layer.bindPopup(popupText);
+                // set style
+                layer.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : 1});
+                // this is just a test of if
+                //if(feature.properties.REP_DIST == '1st Barnstable') {
+                 //   layer.setStyle({fillColor :'red', fillOpacity: 1})
+                //}
             }
         });
         dataLayer.addTo(map);
@@ -52,6 +58,7 @@
     $.getJSON("/themes/custom/lightup/js/from_pat.geojson",function(data){
         //L.geoJson( data ).addTo(map);
         addDistrictsToMap(data, map);
+
     });
 
     map.addLayer( markerClusters );
