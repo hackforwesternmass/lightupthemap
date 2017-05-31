@@ -42,10 +42,17 @@
                 layer.bindPopup(popupText);
                 // set style
                 layer.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : 1});
+                // mouse over districts
+                layer.on('mouseover', function() {
+                    this.setStyle({fillColor :'green', fillOpacity: 0.5, color : 'green', weight : 1});
+                });
+                layer.on('mouseout', function() {
+                    this.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : 1});
+                });
                 // this is just a test of if
-                //if(feature.properties.REP_DIST == '1st Barnstable') {
-                 //   layer.setStyle({fillColor :'red', fillOpacity: 1})
-                //}
+                // if(feature.properties.REP_DIST == '1st Barnstable') {
+                //    layer.setStyle({fillColor :'red', fillOpacity: 1})
+                // }
             }
         });
         dataLayer.addTo(map);
@@ -62,6 +69,10 @@
     });
 
     map.addLayer( markerClusters );
+
+
+
+
 
 })(jQuery);
 
