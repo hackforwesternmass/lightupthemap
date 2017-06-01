@@ -19,7 +19,7 @@
     L.Icon.Default.imagePath = '/themes/custom/lightup/images/leaflet/';
 
     // need this for clustering
-    var markerClusters = L.markerClusterGroup();
+    //var markerClusters = L.markerClusterGroup();
 
     // Add points
     function addDataToMap(data, map) {
@@ -32,7 +32,7 @@
         // this is for no clustering
         // dataLayer.addTo(map);
         // this is for clustering
-        markerClusters.addLayer( dataLayer );
+        //markerClusters.addLayer( dataLayer );
     }
     // add districts
     function addDistrictsToMap(data, map) {
@@ -68,7 +68,7 @@
 
     });
 
-    map.addLayer( markerClusters );
+   // map.addLayer( markerClusters );
 
 })(jQuery);
 
