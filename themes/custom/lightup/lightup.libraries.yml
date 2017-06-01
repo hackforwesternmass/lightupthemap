@@ -35,3 +35,6 @@ actions:
 districts:
   js:
     js/map_districts.js: {}
+district_locations:
+  js:
+    js/map_district_locations.js: {}
