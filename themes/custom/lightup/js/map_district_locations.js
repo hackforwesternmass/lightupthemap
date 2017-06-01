@@ -30,7 +30,7 @@
             }
         });
         // this is for no clustering
-        // dataLayer.addTo(map);
+        dataLayer.addTo(map);
         // this is for clustering
         //markerClusters.addLayer( dataLayer );
     }
