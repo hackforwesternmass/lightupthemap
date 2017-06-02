@@ -29,12 +29,6 @@ leaflet:
     Leaflet_markercluster/dist/leaflet.markercluster.js: {}
   dependencies:
     - core/jquery
-actions:
+lights:
   js:
-    js/map_actions.js: {}
-districts:
-  js:
-    js/map_districts.js: {}
-district_locations:
-  js:
-    js/map_district_locations.js: {}
+    js/map_lights.js: {}
