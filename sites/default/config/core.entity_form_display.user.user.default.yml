@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_district
     - field.field.user.user.field_location
     - field.field.user.user.field_representative
     - field.field.user.user.field_senator
@@ -90,5 +89,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_district: true
+hidden: {  }

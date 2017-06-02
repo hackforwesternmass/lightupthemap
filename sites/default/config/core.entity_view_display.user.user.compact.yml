@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_district
+    - field.field.user.user.field_location
+    - field.field.user.user.field_representative
+    - field.field.user.user.field_senator
   module:
     - user
 _core:
@@ -15,5 +17,7 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
-  field_district: true
+  field_location: true
+  field_representative: true
+  field_senator: true
   member_for: true
