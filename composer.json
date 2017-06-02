@@ -12,7 +12,7 @@
         "drupal/views_geojson": "1.x-dev",
         "drupal/examples": "1.x-dev",
         "drupal/formblock": "^1.0@beta",
-        "drupal/address": "~1.0",
+        "drupal/address": "^1.0",
         "drupal/simplify": "^1.0",
         "drupal/devel": "^1.0@RC",
         "drupal/search_kint": "^1.0",

@@ -5901,7 +5901,7 @@
         "dist": {
             "type": "zip",
             "url": "https://ftp.drupal.org/files/projects/ctools-8.x-3.0.zip",
-            "reference": null,
+            "reference": "8.x-3.0",
             "shasum": "302e869ecd1e59fe55663673999fee2ccac5daa8"
         },
         "require": {
