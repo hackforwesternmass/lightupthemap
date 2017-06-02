@@ -1,0 +1,21 @@
+uuid: 7e8ac09e-478d-4d31-8392-bdc13880dfd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_district_office
+    - node.type.senator
+  module:
+    - telephone
+id: node.senator.field_phone_district_office
+field_name: field_phone_district_office
+entity_type: node
+bundle: senator
+label: 'Phone district office'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -4,10 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.senator.body
+    - field.field.node.senator.field_district_office_address
+    - field.field.node.senator.field_email
     - field.field.node.senator.field_link_senator
+    - field.field.node.senator.field_phone_district_office
+    - field.field.node.senator.field_phone_state_house
+    - field.field.node.senator.field_state_house_address
     - node.type.senator
   module:
+    - address
     - link
+    - telephone
     - text
     - user
 id: node.senator.default
@@ -18,12 +25,26 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_district_office_address:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_email:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
   field_link_senator:
-    weight: 102
+    weight: 2
     label: above
     settings:
       trim_length: 80
@@ -34,7 +55,32 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  links:
-    weight: 100
+  field_phone_district_office:
+    weight: 6
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
     region: content
+  field_phone_state_house:
+    weight: 4
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_state_house_address:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

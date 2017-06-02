@@ -4,10 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.representative.body
+    - field.field.node.representative.field_district_office_address
+    - field.field.node.representative.field_email
     - field.field.node.representative.field_link_representative
+    - field.field.node.representative.field_phone_district_office
+    - field.field.node.representative.field_phone_state_house
+    - field.field.node.representative.field_state_house_address
     - node.type.representative
   module:
+    - address
     - link
+    - telephone
     - text
     - user
 id: node.representative.default
@@ -16,14 +23,28 @@ bundle: representative
 mode: default
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
-    weight: 101
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_district_office_address:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_email:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
   field_link_representative:
-    weight: 102
+    weight: 1
     label: above
     settings:
       trim_length: 80
@@ -34,7 +55,32 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  links:
-    weight: 100
+  field_phone_district_office:
+    weight: 5
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
     region: content
+  field_phone_state_house:
+    weight: 3
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_state_house_address:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

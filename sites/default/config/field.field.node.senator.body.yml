@@ -11,7 +11,7 @@ id: node.senator.body
 field_name: body
 entity_type: node
 bundle: senator
-label: Body
+label: 'About this legistator'
 description: ''
 required: false
 translatable: true

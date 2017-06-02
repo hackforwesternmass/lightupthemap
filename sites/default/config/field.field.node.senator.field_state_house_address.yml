@@ -1,0 +1,36 @@
+uuid: fcc3e4d3-face-4659-8b9e-1e37ca3d1f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_house_address
+    - node.type.senator
+  module:
+    - address
+id: node.senator.field_state_house_address
+field_name: field_state_house_address
+entity_type: node
+bundle: senator
+label: 'State house address'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    sortingCode: sortingCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+  langcode_override: ''
+field_type: address

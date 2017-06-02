@@ -1,0 +1,36 @@
+uuid: 40b25313-df54-409c-8a27-5603433d35ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_district_office_address
+    - node.type.representative
+  module:
+    - address
+id: node.representative.field_district_office_address
+field_name: field_district_office_address
+entity_type: node
+bundle: representative
+label: 'District office address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    sortingCode: sortingCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+  langcode_override: ''
+field_type: address

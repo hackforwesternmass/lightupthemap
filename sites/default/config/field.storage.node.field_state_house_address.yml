@@ -1,0 +1,19 @@
+uuid: 255215e9-4e92-4fbb-851b-f48b39a91841
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - node
+id: node.field_state_house_address
+field_name: field_state_house_address
+entity_type: node
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
