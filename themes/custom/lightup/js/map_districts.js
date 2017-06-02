@@ -58,7 +58,7 @@
         dataLayer.addTo(map);
     }
     // get the lights data
-    $.getJSON('/json-districts', function(data) {
+    $.getJSON('/json-lights', function(data) {
         addDataToMap(data, map);
     });
     // get the districts data
@@ -67,13 +67,7 @@
         addDistrictsToMap(data, map);
 
     });
-
     map.addLayer( markerClusters );
-
-
-
-
-
 })(jQuery);
 
 

@@ -1,0 +1,22 @@
+uuid: f1f3ceed-8b9d-4c96-8004-3afcf5a294ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.senator
+  module:
+    - text
+id: node.senator.body
+field_name: body
+entity_type: node
+bundle: senator
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

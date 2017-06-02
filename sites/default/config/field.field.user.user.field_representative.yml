@@ -1,0 +1,29 @@
+uuid: 4bff0d51-b320-443e-9824-dea679413cfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_representative
+    - node.type.representative
+  module:
+    - user
+id: user.user.field_representative
+field_name: field_representative
+entity_type: user
+bundle: user
+label: Representative
+description: 'Choose your state representative.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      representative: representative
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

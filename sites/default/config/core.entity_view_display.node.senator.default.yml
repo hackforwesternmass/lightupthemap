@@ -1,0 +1,40 @@
+uuid: a79ca433-8046-40c8-b814-cbf84c5c62bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.senator.body
+    - field.field.node.senator.field_link_senator
+    - node.type.senator
+  module:
+    - link
+    - text
+    - user
+id: node.senator.default
+targetEntityType: node
+bundle: senator
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link_senator:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,28 @@
+uuid: 323f2a00-f371-49c6-8a5b-2f4be3174c6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.senator.body
+    - node.type.senator
+  module:
+    - text
+    - user
+id: node.senator.teaser
+targetEntityType: node
+bundle: senator
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

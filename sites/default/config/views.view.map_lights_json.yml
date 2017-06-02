@@ -1,11 +1,11 @@
-uuid: c3c39e90-8d0b-4c00-ba65-2583bd877292
+uuid: 738c9bf6-6c3f-4b73-9af1-59f2e91673ac
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
     - field.storage.user.field_location
-    - node.type.action
+    - node.type.light
   module:
     - geolocation
     - node
@@ -14,8 +14,8 @@ dependencies:
     - text
     - user
     - views_geojson
-id: map_points_by_action
-label: 'Map points by action'
+id: map_lights_json
+label: 'Map lights json'
 module: views
 description: ''
 tag: ''
@@ -337,8 +337,39 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
-            action: action
+            light: light
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
@@ -360,7 +391,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
-      title: 'Map points by actions'
+      title: 'Map points by lights'
     cache_metadata:
       max-age: -1
       contexts:
@@ -380,7 +411,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: json-actions
+      path: json-lights
       pager:
         type: none
         options:

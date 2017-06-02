@@ -1,0 +1,23 @@
+uuid: e3e0a748-e860-4d36-aa86-98133e988f0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_representative
+    - node.type.representative
+  module:
+    - link
+id: node.representative.field_link_representative
+field_name: field_link_representative
+entity_type: node
+bundle: representative
+label: 'Link to representative contact information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,21 @@
+uuid: 3089b03d-0542-4ddf-a3c3-ad8e58c345f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_location
+  module:
+    - geolocation
+    - user
+id: user.user.field_location
+field_name: field_location
+entity_type: user
+bundle: user
+label: Location
+description: 'Choose your location.  You can be as precise or as general as you like, but please include as least the town you live in. The location you enter here will be used for the location of the lights your place on the map. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,23 @@
+uuid: a08d6881-aa24-426f-92b3-fdb25b15561f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_senator
+    - node.type.senator
+  module:
+    - link
+id: node.senator.field_link_senator
+field_name: field_link_senator
+entity_type: node
+bundle: senator
+label: 'Link to senator contact information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_district
+    - field.field.user.user.field_location
+    - field.field.user.user.field_representative
+    - field.field.user.user.field_senator
   module:
+    - geolocation
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -15,6 +19,29 @@ mode: default
 content:
   field_district:
     weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_location:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_representative:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_senator:
+    weight: 9
     label: above
     settings:
       link: true

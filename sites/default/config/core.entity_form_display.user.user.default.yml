@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_district
+    - field.field.user.user.field_location
+    - field.field.user.user.field_representative
+    - field.field.user.user.field_senator
   module:
+    - geolocation
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -14,13 +18,61 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
-    weight: 5
+    weight: 2
     region: content
-  field_district:
-    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  field_location:
+    weight: 4
+    settings:
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+      default_longitude: null
+      default_latitude: null
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
+    third_party_settings: {  }
+    type: geolocation_googlegeocoder
+    region: content
+  field_representative:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_senator:
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -29,9 +81,14 @@ content:
     type: entity_reference_autocomplete
     region: content
   language:
-    weight: 0
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 3
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_district: true

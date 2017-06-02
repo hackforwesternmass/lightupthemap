@@ -1,0 +1,29 @@
+uuid: 04d7d84f-dd6e-4d70-b167-91b4dcbd186f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_senator
+    - node.type.senator
+  module:
+    - user
+id: user.user.field_senator
+field_name: field_senator
+entity_type: user
+bundle: user
+label: Senator
+description: 'Choose your state senator.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      senator: senator
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

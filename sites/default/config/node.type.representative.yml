@@ -1,0 +1,17 @@
+uuid: 96d2ff65-f61a-4fef-9cd9-a1dfaae58b76
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Representative
+type: representative
+description: 'The user''s state representative. '
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false
