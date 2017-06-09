@@ -6,11 +6,14 @@ dependencies:
     - field.field.node.action.body
     - field.field.node.action.field_date
     - field.field.node.action.field_expiration_date
+    - field.field.node.action.field_image
     - field.field.node.action.field_map
+    - image.style.large
     - node.type.action
   module:
     - datetime
     - geolocation
+    - image
     - text
     - user
 id: node.action.default
@@ -34,20 +37,20 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_expiration_date:
+  field_image:
     weight: 1
-    label: inline
+    label: hidden
     settings:
-      timezone_override: ''
-      format_type: html_date
+      image_style: large
+      image_link: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: image
     region: content
   field_map:
     type: geolocation_map
     weight: 4
     region: content
-    label: above
+    label: hidden
     settings:
       title: ''
       set_marker: '1'
@@ -81,4 +84,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_expiration_date: true

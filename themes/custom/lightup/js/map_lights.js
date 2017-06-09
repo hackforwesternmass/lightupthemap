@@ -41,13 +41,13 @@
                 var popupText = feature.properties.REP_DIST;
                 layer.bindPopup(popupText);
                 // set style
-                layer.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : 1});
+                layer.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : .2});
                 // mouse over districts
                 layer.on('mouseover', function() {
-                    this.setStyle({fillColor :'green', fillOpacity: 0.5, color : 'green', weight : 1});
+                    this.setStyle({fillColor :'green', fillOpacity: 0.2, color : 'green', weight : .2 });
                 });
                 layer.on('mouseout', function() {
-                    this.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : 1});
+                    this.setStyle({fillColor :'green', fillOpacity: 0.1, color : 'green', weight : .2});
                 });
                 // this is just a test of if
                 // if(feature.properties.REP_DIST == '1st Barnstable') {

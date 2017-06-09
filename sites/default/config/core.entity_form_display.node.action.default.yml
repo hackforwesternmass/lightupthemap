@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_image_browser
     - field.field.node.action.body
     - field.field.node.action.field_date
     - field.field.node.action.field_expiration_date
+    - field.field.node.action.field_image
     - field.field.node.action.field_map
     - node.type.action
   module:
     - datetime
+    - entity_browser
     - geolocation
     - path
     - text
@@ -44,6 +47,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_image:
+    weight: 26
+    settings:
+      entity_browser: media_image_browser
+      field_widget_remove: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      open: false
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
     region: content
   field_map:
     weight: 9
