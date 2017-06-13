@@ -26,4 +26,20 @@ jQuery(document).ready(function($){
     $( ".district-title" ).click(function() {
         $( this ).next().toggle();
     });
+
+    //$('a').filter(function(index) { return $(this).text() === "/node/29"; }).css({background:"#F00"});
+    $('a[href$="/node/29"]').css({color:"#F00"});
+
+    document.querySelectorAll('.leaflet-container a[href$="/node/29"]').css({color:"#F00"});
 });
+
+L.Map = L.Map.extend({
+    openPopup: function(popup) {
+        // this.closePopup();
+        this._popup = popup;
+        return this.addLayer(popup).fire('popupopen', {
+            popup: this._popup
+        });
+    }
+});
+

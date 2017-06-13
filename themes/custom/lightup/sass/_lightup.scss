@@ -9,7 +9,6 @@
   width: 100%;
 }
 
-
 #wsite-title {
   font-family: "Saginaw" !important;
   font-weight: 700 !important;
@@ -21,9 +20,23 @@
 #content {
   .field--name-body {
     a, a:link, a:visited {
-      color: #faca06;
+      //color: #faca06; //yellow
+      color: green;
       text-decoration: underline;
     }
+  }
+}
+
+.content {
+  a, a:link, a:visited {
+    color: green;
+    text-decoration: underline;
+  }
+}
+
+body.nodetype--light {
+  #block-lightup-page-title h1 {
+    color: green;
   }
 }
 

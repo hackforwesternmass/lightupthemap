@@ -72,10 +72,6 @@
 
     // get the lights data for logged-in user
     $.getJSON('/json-lights-user', function(data) {
-        addDataToMapUser(data, map);
-    });
-    // get the lights data
-    $.getJSON('/json-lights', function(data) {
         addDataToMap(data, map);
     });
     // get the districts data
@@ -86,48 +82,6 @@
 
     map.addLayer( markerClusters );
     //map.addLayer( markerClustersUser );
-
-
-    // see https://stackoverflow.com/questions/35949424/leaflet-clustering-with-multiple-layers-use-markercluster-layersupport
-
-    // Create a normal Marker Cluster Group.
-    //var mcg = L.markerClusterGroup().addTo(map);
-    var mcg = L.markerClusterGroup().addTo(map);
-
-    // Create SubGroups.
-    //var beerMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
-    //var wineMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
-    var beerMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
-
-    // For Layers Control.
-    // var overlayMaps = {
-    //     "Breweries": beerMarkerSub,
-    //     "Wineries": wineMarkerSub
-    // };
-
-    // That is it! No need to check-in.
-
-    // var beerMarker = L.geoJson(null, beerOptions); // DO NOT add to map.
-    // var wineMarker = L.geoJson(null, wineOptions); // Same story.
-    //
-    var beerMarker = L.geoJson(null, beerOptions); // DO NOT add to map.
-    $.getJSON('/json-lights-user', function(data) {
-        beerMarker.addData(data); // GeoJSON conversion.
-        // Then transfer all features into the corresponding sub-group.
-        beerMarker.eachLayer(function (layer) {
-            layer.addTo(beerMarkerSub);
-        });
-    });
-    //
-    // $.getJSON('/json-lights', function(data) {
-    //     wineMarker.addData(data); // GeoJSON conversion.
-    //     // Then transfer all features into the corresponding sub-group.
-    //     wineMarker.eachLayer(function (layer) {
-    //         layer.addTo(wineMarkerSub);
-    //     });
-    // });
-
-    //map.addLayer( mcg );
 
 })(jQuery);
 
