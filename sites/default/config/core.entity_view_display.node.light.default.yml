@@ -13,14 +13,6 @@ targetEntityType: node
 bundle: light
 mode: default
 content:
-  field_action:
-    weight: 1
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   links:
     weight: 0
     region: content
@@ -28,3 +20,4 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_action: true
