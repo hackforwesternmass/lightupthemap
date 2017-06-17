@@ -122,6 +122,8 @@ body.nodetype--light {
   }
   .views-field-title {
     text-transform: uppercase;
+    background: url('/themes/custom/lightup/images/bullet_bulb.png') no-repeat;
+    padding: 5px 10px 10px 30px;
   }
 }
 .action-title {
@@ -136,10 +138,14 @@ body.nodetype--light {
     color: #ffffff;
   }
 }
-.action-info,
-.district-info {
+.action-info {
   padding: 10px;
   border:  $yellow solid 1px;
+  .action-description {
+    font-weight: 87.5%;
+    line-height: normal;
+    padding-bottom: 10px;
+  }
 }
 
 .action-link {
@@ -149,6 +155,7 @@ body.nodetype--light {
     color: #ffffff;
     padding: 5px;
     text-decoration: none;
+    text-transform: uppercase;
     &:hover {
       background-color: #ffffff;
       color: #000000;
