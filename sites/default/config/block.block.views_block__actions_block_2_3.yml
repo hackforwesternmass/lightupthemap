@@ -12,8 +12,8 @@ dependencies:
     - lightup
 id: views_block__actions_block_2_3
 theme: lightup
-region: pre_content
-weight: -9
+region: content
+weight: -4
 provider: null
 plugin: 'views_block:actions-block_2'
 settings:
