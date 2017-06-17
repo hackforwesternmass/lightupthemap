@@ -249,3 +249,19 @@ aside .block, nav.breadcrumb {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.region-footer {
+  margin-top: 30px;
+  background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
+  background: rgba(000, 000, 000, 0.7);
+  color: #ffffff;
+  padding: 20px;
+  border-top: none;
+  a, a:link, a:visited {
+    color: $yellow;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $green;
+  }
+}
