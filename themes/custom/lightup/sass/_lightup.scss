@@ -2,6 +2,19 @@
 // Custom CSS for Lightup ///////
 //////////////////////////////////
 
+// HEADER AND NAV
+
+#block-lightup-account-menu {
+  float: right;
+}
+
+
+#block-lightup-main-menu {
+  clear: both;
+}
+
+// CONTENT
+
 // added per http://savaslabs.com/2015/07/06/map-in-drupal-8.html
 .map--front {
   // Set these to whatever you want.
@@ -57,3 +70,4 @@ strong {
   font-weight: bold;
   font-family: 'Poppins Bold';
 }
+
