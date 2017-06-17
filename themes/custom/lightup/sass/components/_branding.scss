@@ -8,22 +8,23 @@
  vertical-align: bottom;
 }
 .site-branding-text {
-  padding: 30px 10px 10px 0px;
-  margin-bottom: 15px;
-  font-size: 250%; //135%;
+  padding: 30px 10px 20px 0px;
+  //margin-bottom: 15px;
+  font-size: 220%; //135%;
   vertical-align: bottom;
   display: inline-block;
   a {
-    color: $yellow;
+    color: #519c00;
   }
   a:hover {
     color: $yellow;
+    text-decoration: none;
   }
 }
 // logo values
 div.site-branding a.logo {
   width: 80px;
   display: inline-block;
-  padding: 5px 5px 0;
-  margin-bottom: 5px;
+  padding: 0px 0px 0 10px;
+  margin-bottom: 0px;
 }
