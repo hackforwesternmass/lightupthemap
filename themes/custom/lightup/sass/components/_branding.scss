@@ -8,9 +8,9 @@
  vertical-align: bottom;
 }
 .site-branding-text {
-  padding: 30px 10px 10px;
+  padding: 30px 10px 10px 0px;
   margin-bottom: 15px;
-  font-size: 300%; //135%;
+  font-size: 250%; //135%;
   vertical-align: bottom;
   display: inline-block;
   a {
@@ -22,10 +22,8 @@
 }
 // logo values
 div.site-branding a.logo {
-  width: 105px;
- // display: block;
+  width: 80px;
   display: inline-block;
   padding: 5px 5px 0;
- // float: left;
   margin-bottom: 5px;
 }
