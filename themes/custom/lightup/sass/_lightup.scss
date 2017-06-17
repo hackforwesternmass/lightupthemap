@@ -29,8 +29,6 @@ h2 {
   z-index: 9999;
   padding: 1px;  // not sure why but this stops the gap
 }
-
-
 #block-lightup-account-menu {
   float: right;
   margin-right: 20px;
@@ -112,13 +110,18 @@ body.nodetype--light {
     color: green;
   }
 }
-
+#block-views-block-actions-browse-block-1 {
+  margin-top: 30px;
+}
 .action-title,
 .district-title {
   color: $yellow;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 20px;
+  &:hover {
+    color: #ffffff;
+  }
 }
 .action-info,
 .district-info {
@@ -127,10 +130,16 @@ body.nodetype--light {
 }
 
 .action-link {
-  a {
-    background-color: $yellow;
+  a, a:link, a:visited {
+    background-color: #000000;
+    border: #ffffff solid 1px;
     color: #ffffff;
     padding: 5px;
+    text-decoration: none;
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
   }
   margin-bottom: 10px;
 }
@@ -154,3 +163,43 @@ fieldset legend {
   margin-left: -0.1875em;
 }
 
+#edit-field-action--wrapper {
+  legend {
+    padding: 0 0 20px 0;
+  }
+  .form-item-field-action {
+    border-top: 1px solid $yellow;
+    padding-top: 5px;
+    margin-bottom: 5px;
+  }
+  input.field_action,
+  label {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  input.field_action {
+    width: 10%;
+  }
+  label {
+    width: 90%;
+  }
+}
+
+.layout-region-node-secondary {
+  .edit-advanced {
+  background-color: none;
+    color: #ffffff;
+    a, a:link, a:visited {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+}
+.blocked-style, .layout-node-form .layout-region-node-secondary > .form-wrapper,
+aside .block, nav.breadcrumb {
+  border: 1px solid #fff;
+  padding: 12px;
+  border-radius: 5px;
+  background: none;
+}
