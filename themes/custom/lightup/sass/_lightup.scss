@@ -32,11 +32,15 @@ h2 {
 
 #block-lightup-account-menu {
   float: right;
+  margin-right: 20px;
   font-size: 100%; // 16px > 18px
   a, a:link, a:visited {
     text-decoration: none;
     color: #000000;
     cursor: inherit;
+  }
+  a:hover {
+    color: $yellow;
   }
 }
 #block-lightup-branding {
@@ -47,10 +51,18 @@ h2 {
   font-size: 112.5%; // 16px > 18px
   text-transform: uppercase;
   padding: 0px 0px 10px 20px;
+  ul.menu {
+    li {
+      margin: 2px 5px;
+    }
+  }
   a, a:link, a:visited {
     text-decoration: none;
     color: #000000;
     cursor: inherit;
+  }
+  a:hover {
+    color: $yellow;
   }
 }
 
