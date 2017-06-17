@@ -2,15 +2,51 @@
 // Custom CSS for Lightup ///////
 //////////////////////////////////
 
+// VARIABLES
+// see _config.scss
+
+// PAGE
+
+html {
+  background-image: url("/themes/custom/lightup/images/page_background.jpg");
+}
+
+h1, h2, h3 {
+  color: $yellow;
+}
+
 // HEADER AND NAV
+
+#branding {
+  background: rgb(255, 255, 255); /* Fall-back for browsers that don't support rgba */
+  background: rgba(255, 255, 255, 1);
+  width: 100%;
+  clear: both;
+  z-index: 9999;
+}
 
 #block-lightup-account-menu {
   float: right;
+  font-size: 112.5%; // 16px > 18px
+  text-transform: uppercase;
+  a, a:link, a:visited {
+    text-decoration: none;
+    color: #000000;
+    cursor: inherit;
+  }
 }
-
-
+#block-lightup-branding {
+  float: left;
+}
 #block-lightup-main-menu {
   clear: both;
+  font-size: 112.5%; // 16px > 18px
+  text-transform: uppercase;
+  a, a:link, a:visited {
+    text-decoration: none;
+    color: $yellow;
+    cursor: inherit;
+  }
 }
 
 // CONTENT
@@ -33,17 +69,23 @@
 #content {
   .field--name-body {
     a, a:link, a:visited {
-      //color: #faca06; //yellow
-      color: green;
+      color: $yellow;
       text-decoration: underline;
     }
   }
 }
-
-.content {
+.region-content {
+  background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
+  background: rgba(000, 000, 000, 0.7);
+  color: #ffffff;
+  padding: 20px;
+  width: 60%;
   a, a:link, a:visited {
-    color: green;
+    color: $yellow;
     text-decoration: underline;
+  }
+  label {
+    color: $yellow
   }
 }
 
@@ -55,7 +97,7 @@ body.nodetype--light {
 
 .action-title,
 .district-title {
-  color: #faca06;
+  color: $yellow;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 20px;
@@ -63,11 +105,26 @@ body.nodetype--light {
 .action-info,
 .district-info {
   padding: 10px;
-  border:  #faca06 solid 1px;
+  border:  $yellow solid 1px;
+}
+
+.action-link {
+  a {
+    background-color: $yellow;
+    color: #ffffff;
+    padding: 5px;
+  }
+  margin-bottom: 10px;
 }
 
 strong {
   font-weight: bold;
   font-family: 'Poppins Bold';
+}
+
+blockquote {
+  padding: 0 15px;
+  color: $yellow;
+  border-left: 4px solid $yellow;
 }
 

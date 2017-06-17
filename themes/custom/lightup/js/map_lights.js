@@ -92,12 +92,14 @@
 
     // Create a normal Marker Cluster Group.
     //var mcg = L.markerClusterGroup().addTo(map);
-    var mcg = L.markerClusterGroup().addTo(map);
+
+    //var mcg = L.markerClusterGroup().addTo(map);
 
     // Create SubGroups.
     //var beerMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
     //var wineMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
-    var beerMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
+
+    //var beerMarkerSub = L.featureGroup.subGroup(mcg).addTo(map);
 
     // For Layers Control.
     // var overlayMaps = {
@@ -110,14 +112,16 @@
     // var beerMarker = L.geoJson(null, beerOptions); // DO NOT add to map.
     // var wineMarker = L.geoJson(null, wineOptions); // Same story.
     //
-    var beerMarker = L.geoJson(null, beerOptions); // DO NOT add to map.
-    $.getJSON('/json-lights-user', function(data) {
-        beerMarker.addData(data); // GeoJSON conversion.
-        // Then transfer all features into the corresponding sub-group.
-        beerMarker.eachLayer(function (layer) {
-            layer.addTo(beerMarkerSub);
-        });
-    });
+
+    // var beerMarker = L.geoJson(null, beerOptions); // DO NOT add to map.
+    // $.getJSON('/json-lights-user', function(data) {
+    //     beerMarker.addData(data); // GeoJSON conversion.
+    //     // Then transfer all features into the corresponding sub-group.
+    //     beerMarker.eachLayer(function (layer) {
+    //         layer.addTo(beerMarkerSub);
+    //     });
+    // });
+
     //
     // $.getJSON('/json-lights', function(data) {
     //     wineMarker.addData(data); // GeoJSON conversion.
