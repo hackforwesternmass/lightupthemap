@@ -110,15 +110,28 @@ body.nodetype--light {
     color: green;
   }
 }
-#block-views-block-actions-browse-block-1 {
+#block-views-block-actions-browse-block-1,
+#block-views-block-actions-block-2,
+#block-views-block-actions-browse-block-1-2 {
   margin-top: 30px;
+  border-top: solid 1px $yellow;
+  padding-top: 10px;
+  .view-header {
+    font-style: italic;
+    font-size: 85%;
+  }
+  .views-field-title {
+    text-transform: uppercase;
+  }
 }
-.action-title,
-.district-title {
+.action-title {
   color: $yellow;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 20px;
+  text-transform: uppercase;
+  background: url('/themes/custom/lightup/images/bullet_bulb.png') no-repeat;
+  padding: 5px 10px 10px 30px;
   &:hover {
     color: #ffffff;
   }
@@ -202,4 +215,12 @@ aside .block, nav.breadcrumb {
   padding: 12px;
   border-radius: 5px;
   background: none;
+}
+
+.field--name-field-representative,
+.field--name-field-senator {
+  margin-top: 10px;
+  .field__label {
+
+  }
 }
