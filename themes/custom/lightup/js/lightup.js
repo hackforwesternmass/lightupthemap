@@ -10,10 +10,10 @@
     $(window).scroll(function(e){
         var $el = $('#branding');
         var isPositionFixed = ($el.css('position') == 'fixed');
-        if ($(this).scrollTop() > 20 && !isPositionFixed){
+        if ($(this).scrollTop() > 5 && !isPositionFixed){
             $('#branding').css({'position': 'fixed', 'top': '0px'});
         }
-        if ($(this).scrollTop() < 20 && isPositionFixed)
+        if ($(this).scrollTop() < 5 && isPositionFixed)
         {
             $('#branding').css({'position': 'static', 'top': '0px'});
         }
