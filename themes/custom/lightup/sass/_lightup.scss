@@ -27,7 +27,7 @@ h2 {
   width: 100%;
   clear: both;
   z-index: 9999;
-  padding: 1px;  // not sure why but this stops the gap 
+  padding: 1px;  // not sure why but this stops the gap
 }
 
 
@@ -144,5 +144,13 @@ blockquote {
   padding: 0 15px;
   color: $yellow;
   border-left: 4px solid $yellow;
+}
+
+fieldset legend {
+  font-weight: bold;
+  background: none;
+  padding: 0 0.1875em;
+  margin: 0;
+  margin-left: -0.1875em;
 }
 
