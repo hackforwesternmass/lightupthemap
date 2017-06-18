@@ -265,3 +265,20 @@ aside .block, nav.breadcrumb {
     color: $green;
   }
 }
+
+#block-userregister {
+  margin-top: 30px;
+  //background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
+  //background: rgba(000, 000, 000, 0.7);
+  background-color: $yellow;
+  color: #000000;
+  padding: 20px;
+  border: none;
+  a, a:link, a:visited {
+    color: $yellow;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $green;
+  }
+}
