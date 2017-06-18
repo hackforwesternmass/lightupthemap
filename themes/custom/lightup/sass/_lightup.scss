@@ -282,3 +282,23 @@ aside .block, nav.breadcrumb {
     color: $green;
   }
 }
+.page-standard {
+  position: relative;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  z-index: 999999;
+  background-color: $yellow;
+  a {
+    display: block;
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    background: url('/themes/custom/lightup/images/top.png') no-repeat;
+    width: 40px;
+    height: 50px;
+  }
+}
+
