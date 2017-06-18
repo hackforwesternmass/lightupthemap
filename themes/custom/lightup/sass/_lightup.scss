@@ -285,7 +285,7 @@ aside .block, nav.breadcrumb {
 .back-to-top {
   position: fixed;
   bottom: 20px;
-  left: 10px;
+  right: 10px;
   z-index: 999999;
   background-color: $yellow;
   a {
@@ -302,7 +302,7 @@ aside .block, nav.breadcrumb {
 .view-map {
   position: fixed;
   bottom: 80px;
-  left: 10px;
+  right: 10px;
   z-index: 999999;
   background-color: $yellow;
   a {
