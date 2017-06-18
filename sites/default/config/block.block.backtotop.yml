@@ -1,0 +1,25 @@
+uuid: f089c6dd-06a1-4350-8769-67c2043d2a20
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a2a7fe8c-04a9-48e2-9bf0-3eea7131c93c'
+  module:
+    - block_content
+  theme:
+    - lightup
+id: backtotop
+theme: lightup
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:a2a7fe8c-04a9-48e2-9bf0-3eea7131c93c'
+settings:
+  id: 'block_content:a2a7fe8c-04a9-48e2-9bf0-3eea7131c93c'
+  label: 'Back to top'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -11,8 +11,8 @@ dependencies:
     - lightup
 id: userregister
 theme: lightup
-region: sidebar_second
-weight: 0
+region: sidebar_first
+weight: -9
 provider: null
 plugin: 'block_content:1392c8ab-7479-477a-9d2e-913f664c57a9'
 settings:
