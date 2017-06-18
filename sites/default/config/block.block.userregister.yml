@@ -1,0 +1,31 @@
+uuid: 3e1aaefc-8837-46d4-b2fc-4253c23edb7a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1392c8ab-7479-477a-9d2e-913f664c57a9'
+  module:
+    - block_content
+    - system
+  theme:
+    - lightup
+id: userregister
+theme: lightup
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:1392c8ab-7479-477a-9d2e-913f664c57a9'
+settings:
+  id: 'block_content:1392c8ab-7479-477a-9d2e-913f664c57a9'
+  label: 'User register'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /user/register
+    negate: false
+    context_mapping: {  }
