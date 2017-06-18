@@ -78,7 +78,7 @@ h2 {
   // Set these to whatever you want.
   height: 120vh;
   width: 100%;
-  @include breakpoint($small)  { height: 50vh; }
+  @include breakpoint($small)  { height: 60vh; }
 }
 
 #wsite-title {
