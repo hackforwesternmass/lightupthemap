@@ -12,8 +12,8 @@ field_name: field_representative
 entity_type: user
 bundle: user
 label: Representative
-description: 'Choose your state representative.'
-required: false
+description: 'Choose your state representative. This field is auto-complete. Start typing a name and you should find the person. See below for instructions on finding your legislator. '
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -12,8 +12,8 @@ field_name: field_senator
 entity_type: user
 bundle: user
 label: Senator
-description: 'Choose your state senator.'
-required: false
+description: 'Choose your state senator. This field is auto-complete. Start typing a name and you should find the person. See below for instructions on finding your legislator. '
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

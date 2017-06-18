@@ -17,7 +17,7 @@ provider: null
 plugin: 'block_content:25995e5d-9d16-41f6-985d-ab498df11a9e'
 settings:
   id: 'block_content:25995e5d-9d16-41f6-985d-ab498df11a9e'
-  label: 'Find your district '
+  label: 'Find your legislators'
   provider: block_content
   label_display: visible
   status: true
