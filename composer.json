@@ -23,7 +23,8 @@
         "drupal/media_entity_image": "^1.2",
         "drupal/entity_browser": "^1.0",
         "drupal/inline_entity_form": "^1.0@beta",
-        "drupal/ctools": "^3.0"
+        "drupal/ctools": "^3.0",
+        "drupal/smtp": "^1.0@beta"
     },
     "replace": {
         "drupal/core": "~8.3"
