@@ -13,7 +13,7 @@ dependencies:
 id: weaskthatyoulogin
 theme: lightup
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'block_content:3378ea6d-358f-4afb-8840-3f19cb33922f'
 settings:
