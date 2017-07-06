@@ -1,0 +1,10 @@
+site_key: 6LdjFygUAAAAAB1UHY6Z8mDy6fjRoSqUHcch2Nw_
+secret_key: 6LdjFygUAAAAAPAXa5KCVrEQUMzjqOfE6OFnnxwZ
+widget:
+  theme: light
+  type: image
+  size: ''
+  tabindex: 0
+  noscript: false
+_core:
+  default_config_hash: ZKQ03ePk4sH2zESRw4tdZYw__nG2YN4Ru5roPL23g3A

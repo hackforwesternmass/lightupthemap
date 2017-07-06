@@ -1,0 +1,7 @@
+uuid: ee1a819d-9245-4b8d-b720-9d65605ee0fc
+langcode: en
+status: false
+dependencies: {  }
+formId: node_light_form
+captchaType: default
+label: null
