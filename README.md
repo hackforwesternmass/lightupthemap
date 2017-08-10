@@ -6,7 +6,7 @@ Hack for Western Mass process for working on this site.
 * Push that branch: `git push origin 12345-fix-css`
 * File a pull request through the Github UI
 
-Deploying to Pantheon
+Deploying to Pantheon (Rick Hood does this for now)
 ----
 * Pick a pull request
 * Reveiwed it however you like.
