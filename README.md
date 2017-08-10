@@ -7,7 +7,7 @@ Hack for Western Mass process for working on this site.
 * File a pull request through the Github UI
 
 
-Deployng to Pantheon
+Deploying to Pantheon
 ----
 * Pick a pull request
 * Reveiwed it however you like.
