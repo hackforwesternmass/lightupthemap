@@ -16,9 +16,15 @@ Deploying to Pantheon
 * Then `git merge github/master`
 * Then push to Pantheon: `git push origin master`
 
+Notes on theme used (needed for css work)
+----
+* This site uses a subtheme of the COG theme: https://www.drupal.org/project/cog
+* Documentation for this theme: https://github.com/acquia-pso/cog/blob/8.x-1.x/STARTERKIT/README.md
+* The theme is in themes/custom/lightup  compiling sass is done in there via gulp watch. 
+* You need certain things installed for gulp to work, see the documentation above.
+
 Other Notes
 ----
 * Need instructions for how to set up site locally (settings.local.php)
-* Need instructions for what is needed for gulp setup (for sass)
 * How to get developers the database needed?
 
