@@ -10,4 +10,9 @@ Hack for Western Mass process for working on this site.
 Deployng to Pantheon
 ----
 * Pick a pull request
-*
+* Reveiwed it however you like.
+* When all OK, merge the PR on Github.
+* Do `git checkout master`
+* On local, `git fetch github`
+* Then `git merge github/master`
+* Then push to Pantheon: `git push origin master`
