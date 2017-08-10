@@ -6,7 +6,6 @@ Hack for Western Mass process for working on this site.
 * Push that branch: `git push origin 12345-fix-css`
 * File a pull request through the Github UI
 
-
 Deploying to Pantheon
 ----
 * Pick a pull request
@@ -16,3 +15,10 @@ Deploying to Pantheon
 * On local, `git fetch github`
 * Then `git merge github/master`
 * Then push to Pantheon: `git push origin master`
+
+Other Notes
+----
+* Need instructions for how to set up site locally (settings.local.php)
+* Need instructions for what is needed for gulp setup (for sass)
+* How to get developers the database needed?
+
