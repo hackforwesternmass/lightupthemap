@@ -1,0 +1,48 @@
+name: ligthupthemap
+
+# Start with the default Pantheon recipe
+recipe: pantheon
+
+# Configure the Pantheon recipe
+config:
+
+  # Optionally specify the type of Pantheon site this is. If ommitted this will
+  # default to `drupal`. You can use the following options
+  #
+  #   - `backdrop`
+  #   - `drupal` (for Drupal 6 and Drupal 7 sites)
+  #   - `drupal8`
+  #   - `wordpress`
+  #
+  #framework: drupal8
+
+  # Optionally activate xdebug
+  xdebug: true
+
+  # Optionally specify the site id, name and environment for your Pantheon site
+  #
+  # This is helpful for running terminus commands or performing similar operations
+  # id: 7587b3ea-95b6-44ab-b36b-6ebd9c3e9866
+  # site: kalabox-drupal7
+  # env: dev
+
+services:
+  # appserver:
+  #   extras:
+  #     - "cd $LANDO_MOUNT && npm install"
+  #     - "cd $LANDO_MOUT composer install"
+  node-cli:
+    type: node:4.8
+    globals:
+      gulp-cli: "latest"
+    # extras:
+    #   - "cd $LANDO_MOUNT && npm install"
+
+# See: https://docs.lndo.io/config/tooling.html
+tooling:
+  npm:
+    service: node-cli
+  node:
+    service: node-cli
+  gulp:
+    service: node-cli

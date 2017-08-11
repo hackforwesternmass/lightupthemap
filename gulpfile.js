@@ -82,12 +82,12 @@ var path = require('path');
 // These are used in the options below.
 var paths = {
   styles: {
-    source: 'sass/',
-    destination: 'css/'
+    source: 'themes/custom/lightup/sass/',
+    destination: 'themes/custom/lightup/css/'
   },
-  scripts: 'js/',
-  images: 'img/',
-  styleGuide: 'styleguide'
+  scripts: 'themes/custom/lightup/js/',
+  images: 'themes/custom/lightup/img/',
+  styleGuide: 'themes/custom/lightup/styleguide'
 };
 
 // These are passed to each task.
@@ -156,18 +156,18 @@ var options = {
 };
 
 // Tasks
-require('./gulp-tasks/build')(gulp, plugins, options);
-require('./gulp-tasks/clean')(gulp, plugins, options);
-require('./gulp-tasks/clean-css')(gulp, plugins, options);
-require('./gulp-tasks/clean-styleguide')(gulp, plugins, options);
-require('./gulp-tasks/compile-sass')(gulp, plugins, options);
-require('./gulp-tasks/compile-styleguide')(gulp, plugins, options);
-require('./gulp-tasks/default')(gulp, plugins, options);
-require('./gulp-tasks/lint-js')(gulp, plugins, options);
-require('./gulp-tasks/lint-css')(gulp, plugins, options);
-require('./gulp-tasks/minify-css')(gulp, plugins, options);
-require('./gulp-tasks/test-css')(gulp, plugins, options);
-require('./gulp-tasks/watch')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/build')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/clean')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/clean-css')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/clean-styleguide')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/compile-sass')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/compile-styleguide')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/default')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/lint-js')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/lint-css')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/minify-css')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/test-css')(gulp, plugins, options);
+require('./themes/custom/lightup/gulp-tasks/watch')(gulp, plugins, options);
 
 // Credits:
 //
