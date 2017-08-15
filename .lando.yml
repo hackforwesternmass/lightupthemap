@@ -1,4 +1,5 @@
-name: ligthupthemap
+# Pantheon recipe
+name: lightupthemap
 
 # Start with the default Pantheon recipe
 recipe: pantheon
@@ -14,29 +15,18 @@ config:
   #   - `drupal8`
   #   - `wordpress`
   #
-  #framework: drupal8
-
+  framework: drupal8
+  webroot: ./
   # Optionally activate xdebug
   xdebug: true
 
-  # Optionally specify the site id, name and environment for your Pantheon site
-  #
-  # This is helpful for running terminus commands or performing similar operations
-  # id: 7587b3ea-95b6-44ab-b36b-6ebd9c3e9866
-  # site: kalabox-drupal7
-  # env: dev
-
 services:
-  # appserver:
-  #   extras:
-  #     - "cd $LANDO_MOUNT && npm install"
-  #     - "cd $LANDO_MOUT composer install"
   node-cli:
     type: node:4.8
     globals:
       gulp-cli: "latest"
-    # extras:
-    #   - "cd $LANDO_MOUNT && npm install"
+    extras:
+      - "cd $LANDO_MOUNT && npm install"
 
 # See: https://docs.lndo.io/config/tooling.html
 tooling:
