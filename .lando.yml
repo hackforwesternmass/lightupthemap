@@ -1,0 +1,38 @@
+# Pantheon recipe
+name: lightupthemap
+
+# Start with the default Pantheon recipe
+recipe: pantheon
+
+# Configure the Pantheon recipe
+config:
+
+  # Optionally specify the type of Pantheon site this is. If ommitted this will
+  # default to `drupal`. You can use the following options
+  #
+  #   - `backdrop`
+  #   - `drupal` (for Drupal 6 and Drupal 7 sites)
+  #   - `drupal8`
+  #   - `wordpress`
+  #
+  framework: drupal8
+  webroot: ./
+  # Optionally activate xdebug
+  xdebug: true
+
+services:
+  node-cli:
+    type: node:4.8
+    globals:
+      gulp-cli: "latest"
+    extras:
+      - "cd $LANDO_MOUNT && npm install"
+
+# See: https://docs.lndo.io/config/tooling.html
+tooling:
+  npm:
+    service: node-cli
+  node:
+    service: node-cli
+  gulp:
+    service: node-cli

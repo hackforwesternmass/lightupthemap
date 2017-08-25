@@ -22,7 +22,7 @@ Local setup of the Drupal site
 ----
 * Clone the repo to wherever you keep your local sites
 * Create a database and import the database dump (ask Rick Hood if you do not know where that is)
-* You copy /sites/example.settings.local.php to /sites/default/settings.local.php 
+* You copy /sites/example.settings.local.php to /sites/default/settings.local.php
 * Put your local database setting in settings.local.php like this (put it at the bottom of the file):
 `$settings['install_profile'] = 'standard';
  $databases['default']['default'] = array (
@@ -43,8 +43,23 @@ Notes on theme used (needed for css work)
 ----
 * This site uses a subtheme of the COG theme: https://www.drupal.org/project/cog
 * Documentation for this theme: https://github.com/acquia-pso/cog/blob/8.x-1.x/STARTERKIT/README.md
-* The theme is in themes/custom/lightup  compiling sass is done in there via gulp watch. 
+* The theme is in themes/custom/lightup  compiling sass is done in there via gulp watch.
 * You need certain things installed for gulp to work, see the documentation above.
 
+Using Lando for Local Dev Stack
+----
 
+* Get lando: https://docs.lndo.io
+* Start the app:
+  * `lando start`
+* Import the DB
+  * Get the DB from H4WM Google Drive
+  * Import with lando: `lando db-import name_of_db_file.sql.gz`
+* To get logged in as admin
+  * `lando drush uli` ~ spit out a login URL for the admin user
 
+Lando will install npm, gulp, composer and allows you to use those tools.
+* To watch the theme sass files:
+  * `lando gulp watch`
+* To get usefule info about your app like connecting the DB container use:
+  * `lando info`
