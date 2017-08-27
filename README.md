@@ -56,6 +56,23 @@ Using Lando for Local Dev Stack
   * `cd foldername`
 * Start the app:
   * `lando start`
+  * It installs a bunch of stuff when when it finishes it looks like this:
+  
+  `BOOMSHAKALAKA!!!`
+  
+  `Your app has started up correctly.`
+  `Here are some vitals:`
+  
+   `NAME      lightupthemap`
+   `LOCATION  /Users/username/path_to_folder`
+   `SERVICES  appserver, nginx, database, cache, edge_ssl, edge, index, node-cli`
+   `URLS      https://localhost:32771`
+             `http://localhost:32772`
+             `https://localhost:32775`
+             `http://localhost:32774`
+             `http://lightupthemap.lndo.site`
+             `https://lightupthemap.lndo.site`
+
 * Import the DB
   * Get the DB from H4WM Google Drive
   * Import with lando: `lando db-import name_of_db_file.sql.gz`
