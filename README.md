@@ -63,7 +63,7 @@ Using Lando for Local Dev Stack
   * `lando drush uli` ~ spit out a login URL for the admin user
   * the link looks like this: http://default/user/reset/1/1503870598/m_FqhS9_UO14BqQShEGXpe0rKsTFVGj2ox5PAndkffw/login
   * take the part starting with /user/reset/...  and tack that onto the url for your local site
-  * like this https://lightupthemap.lndo.site/reset/1/1503870598/m_FqhS9_UO14BqQShEGXpe0rKsTFVGj2ox5PAndkffw/login
+  * like this https://lightupthemap.lndo.site/user/reset/1/1503870598/m_FqhS9_UO14BqQShEGXpe0rKsTFVGj2ox5PAndkffw/login
   * that will get you to a page to reset the user/1 password
 
 Lando will install npm, gulp, composer and allows you to use those tools.
