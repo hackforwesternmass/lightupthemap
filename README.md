@@ -18,7 +18,7 @@ Deploying to Pantheon (Rick Hood does this for now)
 * Then push to Pantheon: `git push origin master`
 (Note Rick has two remotes: in his case "origin" is Pantheon and "github" is Github.  In your case "origin" = Github.  Possible to do: Rick change his local git to rename "origin" to "pantheon" and "github" to "origin".)
 
-Local setup of the Drupal site
+Local setup of the Drupal site (or see Using Lando for Local Dev Stack below )
 ----
 * Clone the repo to wherever you keep your local sites
 * Create a database and import the database dump (ask Rick Hood if you do not know where that is)
@@ -50,6 +50,10 @@ Using Lando for Local Dev Stack
 ----
 
 * Get lando: https://docs.lndo.io
+* Clone the repo into a folder where you want the local site to be:
+  * `git clone git@github.com:hackforwesternmass/lightupthemap.git foldername`
+* cd into that folder:
+  * `cd foldername`
 * Start the app:
   * `lando start`
 * Import the DB
@@ -57,6 +61,10 @@ Using Lando for Local Dev Stack
   * Import with lando: `lando db-import name_of_db_file.sql.gz`
 * To get logged in as admin
   * `lando drush uli` ~ spit out a login URL for the admin user
+  * the link looks like this: http://default/user/reset/1/1503870598/m_FqhS9_UO14BqQShEGXpe0rKsTFVGj2ox5PAndkffw/login
+  * take the part starting with /user/reset/...  and tack that onto the url for your local site
+  * like this https://lightupthemap.lndo.site/reset/1/1503870598/m_FqhS9_UO14BqQShEGXpe0rKsTFVGj2ox5PAndkffw/login
+  * that will get you to a page to reset the user/1 password
 
 Lando will install npm, gulp, composer and allows you to use those tools.
 * To watch the theme sass files:
