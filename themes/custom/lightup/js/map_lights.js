@@ -70,11 +70,12 @@
     //var userMarker = L.geoJson(null, userOptions); // DO NOT add to map.
     //var lightsMarker = L.geoJson(null, lightsOptions); // Same story.
 
-    // get the lights data for logged-in user
-    $.getJSON('/json-lights-user', function(data) {
-        addDataToMapUser(data, map);
-    });
+    // get the lights data for logged-in user (not used)
+    // $.getJSON('/json-lights-user', function(data) {
+    //     addDataToMapUser(data, map);
+    // });
     // get the lights data
+    // this comes from a Drupal view admin/structure/views/view/map_lights_json
     $.getJSON('/json-lights', function(data) {
         addDataToMap(data, map);
     });
