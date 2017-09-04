@@ -1,0 +1,8 @@
+uuid: f726528a-a4e7-4a03-bd15-f6264e7c8ea5
+langcode: en
+status: true
+dependencies: {  }
+id: resources
+label: Resources
+description: 'supportive action documents and links'
+locked: false
