@@ -13,6 +13,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'change own username'
   - 'create light content'
   - 'edit own light content'
   - 'search content'
