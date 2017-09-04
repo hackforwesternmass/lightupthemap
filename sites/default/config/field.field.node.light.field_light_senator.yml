@@ -1,0 +1,28 @@
+uuid: 8acee253-29f6-4452-8310-6bd7bd725bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_light_senator
+    - node.type.light
+    - node.type.senator
+id: node.light.field_light_senator
+field_name: field_light_senator
+entity_type: node
+bundle: light
+label: Senator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      senator: senator
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
