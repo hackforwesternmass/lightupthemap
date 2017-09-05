@@ -22,7 +22,7 @@ Local Setup Using Lando for Local Dev Stack
 ----
 * Get lando: https://docs.lndo.io
 * Clone the repo into a folder where you want the local site to be:
-  * `git clone git@github.com:hackforwesternmass/lightupthemap.git foldername`
+  * `git clone https://github.com/hackforwesternmass/lightupthemap.git foldername`
 * cd into that folder:
   * `cd foldername`
 * Start the app:
