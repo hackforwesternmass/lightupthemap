@@ -12,6 +12,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'create light content'
   - 'search content'
   - 'use text format basic_html'
   - 'view media'
