@@ -1,0 +1,28 @@
+uuid: 3e8aff4a-77f4-4d02-81ae-b7bce1bd8e6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_light_representative
+    - node.type.light
+    - node.type.representative
+id: node.light.field_light_representative
+field_name: field_light_representative
+entity_type: node
+bundle: light
+label: Representative
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      representative: representative
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

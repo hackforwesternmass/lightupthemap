@@ -1,4 +1,3 @@
-{{ attach_library('lightup/lights_user') }}
 {% set classes = [
 'node',
 'node--type-' ~ node.bundle|clean_class,
@@ -9,6 +8,8 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 
   {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
   <header>
+    {# note the title is only printed if this is a list of content, not single content #}
+    {# see page.html.twig for where the title is printed for single peice of content #}
     {{ title_prefix }}
     {% if not page and label %}
     <h2{{ title_attributes }}>
@@ -31,20 +32,15 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   {% endif %}
 
   <div class="content">
-      {#the content variable contains all the content, we want certain fields#}
-      {{ content|without('comment', 'links', 'field_action', 'field_light_representative', 'body', 'field_light_senator', 'field_map') }}
-      {#below are the fields on this content, except the title#}
-      {{ content.body }}
-      {{ content.field_action }}
-
-      {# the fields below are new, do not exist on the current live site #}
-      {{ content.field_light_representative }}
-      {{ content.field_light_senator }}
-      {{ content.field_map }}
-
-    <h2>The lights you have put on the map so far are shown below!</h2>
-    <p> << <a href="/">Back to home page</a> to see everyone's lights.</p>
+    {#the content variable contains all the content, we want certain fields#}
+    {{ content|without('comment', 'links', 'field_date', 'field_expiration_date', 'body', 'field_image', 'field_map') }}
+    {#below are the fields on this content, except the title#}
+    {{ content.field_image }}
+    {{ content.field_date }}
+    {{ content.body }}
+    {{ content.field_map }}
   </div>
+
 <!-- /content -->
 
   {% if content.links.terms %}
@@ -63,9 +59,4 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 
   {{ content.comment }}
 </article>
-
-{# the div below contains a map of the logged-in user's lights #}
-{# using json from: https://www.lightupthemap.com/json-lights-user #}
-<div id="map" class="map--front"></div>
-
 <!-- /article #node -->

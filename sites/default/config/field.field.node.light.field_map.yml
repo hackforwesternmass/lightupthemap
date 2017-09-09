@@ -1,0 +1,21 @@
+uuid: fd5372ae-cc6f-4f88-9e80-484055f79f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map
+    - node.type.light
+  module:
+    - geolocation
+id: node.light.field_map
+field_name: field_map
+entity_type: node
+bundle: light
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation
