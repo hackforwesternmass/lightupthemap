@@ -5,40 +5,39 @@ dependencies:
   config:
     - field.field.node.light.body
     - field.field.node.light.field_action
-    - field.field.node.light.field_light_representative
-    - field.field.node.light.field_light_senator
     - field.field.node.light.field_map
+    - field.field.node.light.field_representative_text
+    - field.field.node.light.field_senator_text
     - node.type.light
   module:
     - geolocation
+    - text
     - user
 id: node.light.default
 targetEntityType: node
 bundle: light
 mode: default
 content:
-  field_light_representative:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_light_senator:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_map:
     weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: geolocation_latlng
+    region: content
+  field_representative_text:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_senator_text:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 0

@@ -1,0 +1,21 @@
+uuid: a6640b62-0a82-4d8b-a110-b7a38622b379
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_representative_text
+  module:
+    - text
+    - user
+id: user.user.field_representative_text
+field_name: field_representative_text
+entity_type: user
+bundle: user
+label: 'Representative '
+description: 'Value of state representative store here, pulled in via API.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

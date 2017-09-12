@@ -1,0 +1,21 @@
+uuid: 52cc04cb-e20f-44af-b7e3-c5ec408d5520
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_representative_text
+    - node.type.light
+  module:
+    - text
+id: node.light.field_representative_text
+field_name: field_representative_text
+entity_type: node
+bundle: light
+label: Representative
+description: 'Value of state representative store here, pulled in via API.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
