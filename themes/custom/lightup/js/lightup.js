@@ -118,6 +118,7 @@
       // Hide this button and show the reps phone number
       $(this).hide();
       $(this).siblings('.phone-number').show();
+      var rep_name = $(this).parent().siblings('.name').html();
 
       // Create light node
       $.get('/rest/session/token', function(token) {
@@ -158,13 +159,10 @@
                 "target_type": "node"
               }
             ],
-            "field_light_representative": [
+            "field_representative_text": [
               {
-                "target_id": 113,
-                "target_type": "node"
+                "value": rep_name,
               }
-            ],
-            "field_light_senator": [
             ],
             "field_map": [
                 {
