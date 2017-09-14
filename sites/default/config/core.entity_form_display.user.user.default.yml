@@ -5,9 +5,12 @@ dependencies:
   config:
     - field.field.user.user.field_location
     - field.field.user.user.field_representative
+    - field.field.user.user.field_representative_text
     - field.field.user.user.field_senator
+    - field.field.user.user.field_senator_text
   module:
     - geolocation
+    - text
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -22,7 +25,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -70,6 +73,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_representative_text:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
   field_senator:
     weight: 3
     settings:
@@ -79,8 +90,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  language:
+  field_senator_text:
     weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  language:
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

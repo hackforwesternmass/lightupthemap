@@ -1,0 +1,21 @@
+uuid: 85f81b70-3026-466d-85aa-8f236d433304
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_senator_text
+  module:
+    - text
+    - user
+id: user.user.field_senator_text
+field_name: field_senator_text
+entity_type: user
+bundle: user
+label: Senator
+description: 'Value of state senator store here, pulled in via API.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

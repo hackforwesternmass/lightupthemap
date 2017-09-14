@@ -1,16 +1,17 @@
-uuid: 8e43ae68-b001-4e5c-9a96-81603c9af99e
+uuid: 4d83fd98-d565-406a-b161-e3c5732dada8
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_light_senator
-field_name: field_light_senator
+    - text
+id: node.field_representative_text
+field_name: field_representative_text
 entity_type: node
-type: entity_reference
+type: text
 settings:
-  target_type: node
-module: core
+  max_length: 1024
+module: text
 locked: false
 cardinality: 1
 translatable: true
