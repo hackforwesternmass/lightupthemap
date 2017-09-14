@@ -20,7 +20,7 @@ h2 {
 }
 
 .cog--mq {
-  max-width: 80em;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin: 0px auto;
@@ -104,8 +104,6 @@ h2 {
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
   background: rgba(000, 000, 000, 0.7);
   color: #ffffff;
-  padding: 20px;
-  width: 60%;
   a, a:link, a:visited {
     color: $yellow;
     text-decoration: underline;
@@ -316,4 +314,121 @@ aside .block, nav.breadcrumb {
     height: 50px;
   }
 }
-
+.map-overlay {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 20px 10px 20px;
+}
+.map-overlay button {
+  margin: 20px auto;
+  display: block;
+}
+#join-and-share {
+  display: none;
+}
+form[name="address"] {
+  width: 310px;
+  margin: 0 auto;
+  .form-group.street {
+    width: 310px;
+  }
+  .city-state {
+    display: flex;
+  }
+  .form-group.city {
+    width: 240px;
+  }
+  .form-group.state {
+    width: 48px;
+    margin-left: 20px;
+  }
+  .form-group input[type="text"] {
+    width: 100%;
+  }
+}
+.action-script {
+  padding: 0 10px;
+  border-right: #faca06 solid 1px;
+}
+.action-reps {
+  position: fixed;
+  right: 0;
+}
+.rep {
+  display: flex;
+  padding: 20px;
+}
+.rep > div {
+  padding: 0 20px;
+}
+.rep h3 {
+  margin: 5px;
+}
+.rep .photo {
+  width: 120px;
+  min-width: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.rep .phone {
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.rep .office-name {
+  width: 95px;
+  display: inline-block;
+}
+.rep .fa:before {
+  margin-right: 5px;
+}
+.rep .phone-number {
+  display: none;
+}
+.modal .modal-footer {
+  text-align: center;
+  color: #777;
+}
+.modal-footer b {
+  color: #333;
+}
+.modal-footer i {
+  color: #ccc;
+}
+.modal.in {
+    display: flex !important;
+    height: 100%;
+    color: #333;
+}
+.modal.in .modal-dialog {
+    margin: auto;
+}
+.modal-dialog {
+    overflow-y: initial !important
+}
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.viewmap {
+  text-align: center;
+}
+button.btn-primary {
+  background-color: #faca06;
+  border-color: #b49100;
+}
+.close {
+  box-shadow: unset;
+}
+.nodetype--action .block-page-title-block, .nodetype--action .block-tabs {
+  display: none;
+}
+.leaflet-control a, .leaflet-control a:link {
+  text-decoration: none;
+}

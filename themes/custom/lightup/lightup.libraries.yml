@@ -18,6 +18,7 @@ global_styles:
     js/lightup.js: {}
   dependencies:
     - core/jquery
+
 leaflet:
   css:
     theme:
@@ -30,9 +31,20 @@ leaflet:
     js/leaflet.featuregroup.subgroup.js: {}
   dependencies:
     - core/jquery
+bootstrap:
+  css:
+    theme:
+      https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css: {type: external}
+  js:
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: {type: external, minified: true}
+  dependencies:
+    - core/jquery
 lights:
   js:
     js/map_lights.js: {}
 lights_user:
   js:
     js/map_lights_user.js: {}
+actions:
+  js:
+    js/map_actions.js: {}
