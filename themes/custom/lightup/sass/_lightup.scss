@@ -323,10 +323,16 @@ aside .block, nav.breadcrumb {
   background: #000;
   color: #fff;
   padding: 1px 20px 10px 20px;
-}
-.map-overlay button {
-  margin: 20px auto;
-  display: block;
+  button {
+    margin: 20px auto;
+    display: block;
+  }
+  .close {
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    color: #fff;
+  }
 }
 #join-and-share {
   display: none;
@@ -372,13 +378,12 @@ form[name="address"] {
 .rep .photo {
   width: 120px;
   min-width: 120px;
+  max-height: 200px;
   background-size: cover;
   background-position: center;
   border-radius: 8px;
 }
 .rep .phone {
-  height: 40px;
-  line-height: 40px;
   vertical-align: middle;
 }
 .rep .office-name {
@@ -394,6 +399,10 @@ form[name="address"] {
 .modal .modal-footer {
   text-align: center;
   color: #777;
+  a:link {
+    text-decoration: none;
+    color: #777;
+  }
 }
 .modal-footer b {
   color: #333;

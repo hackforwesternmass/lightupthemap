@@ -23,15 +23,19 @@
 
     $("button.take-action").on("click", function() {
       if (!logged_in) {
-        $("#takeActionModal").modal();
+        $("#findYourRepModal").modal();
       } else {
         $("#makeACallModal").modal();
       }
     });
+    $("a#find-your-rep").on("click", function() {
+      $('.modal').modal('hide');
+      $("#findYourRepModal").modal('show');
+    });
 
     $("form[name=address]").on( "submit", function( event ) {
       event.preventDefault();
-      $('#takeActionModal').modal('hide');
+      $('#findYourRepModal').modal('hide');
       $('#makeACallModal').modal('show');
       var MAPS_API_KEY = 'AIzaSyBuSeH7ueeVuaJs03xIwjtd7hbmShWZ_ew';
       var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
@@ -64,7 +68,7 @@
             dataType: "jsonp",
             success: function (reps) {
               console.log(reps);
-
+              $("#reps").empty();
               for (rep of reps) {
                 var div = document.createElement('div')
                 div.className = 'rep';
@@ -85,10 +89,12 @@
                 role.className = 'role';
                 innerDiv.appendChild(role);
                 for (office of rep.offices) {
-                  var phone = document.createElement('div');
-                  phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now!</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
-                  phone.className = 'phone';
-                  innerDiv.appendChild(phone);
+                  if (office.phone) {
+                    var phone = document.createElement('div');
+                    phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now!</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
+                    phone.className = 'phone';
+                    innerDiv.appendChild(phone);
+                  }
                 }
                 var website = document.createElement('div');
                 website.innerHTML = '<i class="fa fa-user-circle-o fa-lg fa-fw"></i><a href="' + rep.url + '">Website</a>';
@@ -99,7 +105,7 @@
               };
               var viewmap = document.createElement('div');
               viewmap.className = 'viewmap';
-              viewmap.innerHTML = 'Done calling? See your light on the map!<br/><button type="button" class="btn btn-primary btn-lg viewmap">View Map</button>';
+              viewmap.innerHTML = '<p>Done calling? See your light on the map!</p><button type="button" class="btn btn-primary btn-lg viewmap">View Map</button>';
               $('#reps').append(viewmap);
             },
             error: function () {
@@ -199,7 +205,7 @@
       $('#makeACallModal').modal('hide');
       var zoom = 10;
       map.setView(loc, zoom, {pan: {animate: true}});
-      $('#take-action').hide();
+      $('#find-your-rep').hide();
       $('#join-and-share').show();
     });
     // Register a new account.
@@ -284,6 +290,9 @@
     })
     $('.modal').on('hidden.bs.modal', function (e) {
       $('body').css('overflow','auto');
+    })
+    $('.map-overlay .close').on('click', function(e) {
+      $('.map-overlay').hide();
     })
 
 })(jQuery);

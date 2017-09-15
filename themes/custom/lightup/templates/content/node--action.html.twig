@@ -46,6 +46,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
     {{ content|without('comment', 'links', 'field_date', 'field_expiration_date', 'body', 'field_image', 'field_map') }}
     {#below are the fields on this content, except the title#}
     <div id="take-action" class="map-overlay">
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
       <div>
         <h1>{{ label }}</h1>
         <h4>Six calls can change the world!</h4>
@@ -55,6 +56,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
       </button>
     </div>
     <div id="join-and-share" class="map-overlay row">
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
       <h1>What's next?</h1>
       <div class="col-sm-6">
         <h3>Join Us!</h3>
@@ -99,28 +101,28 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
 </article>
 <!-- /article #node -->
 
-<!-- Take Action Modal -->
-<div class="modal fade" id="takeActionModal" tabindex="-1" role="dialog" aria-labelledby="takeActionLabel">
+<!-- Find Your Rep Modal -->
+<div class="modal fade" id="findYourRepModal" tabindex="-1" role="dialog" aria-labelledby="findYourRepLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="takeActionLabel">Find Your Representatives</h4>
+        <h4 class="modal-title" id="findYourRepLabel">Find Your Representatives</h4>
       </div>
       <div class="modal-body">
         <form name="address">
           <div class="form-group">
             <label for="street">Street</label>
-            <input type="type" class="form-control" id="street" placeholder="Street">
+            <input type="type" class="form-control" id="street" placeholder="Not required but more accurate if included">
           </div>
           <div class="city-state">
             <div class="form-group city">
               <label for="city">City</label>
-              <input type="text" class="form-control" id="city" placeholder="City">
+              <input type="text" class="form-control" id="city" placeholder="City" required>
             </div>
             <div class="form-group state">
               <label for="state">State</label>
-              <input type="text" class="form-control" id="state" value="MA" maxlength="2">
+              <input type="text" class="form-control" id="state" value="MA" maxlength="2" required>
             </div>
           </div>
           <button type="submit" class="btn btn-primary">Find Your Reps!</button>
@@ -151,7 +153,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         </div>
       </div>
       <div class="modal-footer">
-        Find Your Rep <i class="fa fa-arrow-right"></i> <b>Make a Call</b> <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
+        <a id="find-your-rep">Find Your Rep</a> <i class="fa fa-arrow-right"></i> <b>Make a Call</b> <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
       </div>
     </div>
   </div>
