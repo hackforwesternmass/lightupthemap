@@ -1,4 +1,6 @@
 // custom js
+var MAPS_API_KEY = 'AIzaSyBuSeH7ueeVuaJs03xIwjtd7hbmShWZ_ew';
+var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
 
 (function ($) {
     $('.action-info').hide();
@@ -18,13 +20,12 @@
     //     }
     // });
 
-    var loc; // [lat, lng] of user
-    var city_loc // [lat, lng] of user's city
-
     $("button.take-action").on("click", function() {
+      $('#take-action').hide();
       if (!logged_in) {
         $("#findYourRepModal").modal();
       } else {
+        lookupLegislators(loc["lat"], loc["lng"]);
         $("#makeACallModal").modal();
       }
     });
@@ -37,8 +38,6 @@
       event.preventDefault();
       $('#findYourRepModal').modal('hide');
       $('#makeACallModal').modal('show');
-      var MAPS_API_KEY = 'AIzaSyBuSeH7ueeVuaJs03xIwjtd7hbmShWZ_ew';
-      var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
       var address = $("#street").val() + " " + $("#city").val() + " " + $("#state").val();
       var city = $("#city").val() + " " + $("#state").val();
       $.ajax({
@@ -57,61 +56,12 @@
             dataType: "json",
             success: function (result) {
               city_loc = result.results[0].geometry.location;
+              console.log(city_loc);
             }
           });
           // Initialize call database
           //var database = firebase.database();
-          $.ajax({
-            // Lookup user's representatives
-            url: 'https://openstates.org/api/v1/legislators/geo/?lat=' + loc['lat'] + '&long=' + loc['lng'] + '&apikey=' + OS_API_KEY,
-            type: "GET",
-            dataType: "jsonp",
-            success: function (reps) {
-              console.log(reps);
-              $("#reps").empty();
-              for (rep of reps) {
-                var div = document.createElement('div')
-                div.className = 'rep';
-                var photo = document.createElement('div');
-                console.log(rep.photo_url);
-                photo.style.backgroundImage = 'url(' + rep.photo_url +')';
-                photo.style.backgroundRepeat = 'no-repeat';
-                photo.className = 'photo';
-                div.appendChild(photo);
-                var innerDiv = document.createElement('div');
-                div.appendChild(innerDiv);
-                var name = document.createElement('h3');
-                name.innerHTML = rep.full_name;
-                name.className = 'name';
-                innerDiv.appendChild(name);
-                var role = document.createElement('div');
-                role.innerHTML = rep.party + (rep.chamber == 'lower' ? ' Representative ' : " Senator ") + 'for the ' + rep.district + ' District';
-                role.className = 'role';
-                innerDiv.appendChild(role);
-                for (office of rep.offices) {
-                  if (office.phone) {
-                    var phone = document.createElement('div');
-                    phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now!</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
-                    phone.className = 'phone';
-                    innerDiv.appendChild(phone);
-                  }
-                }
-                var website = document.createElement('div');
-                website.innerHTML = '<i class="fa fa-user-circle-o fa-lg fa-fw"></i><a href="' + rep.url + '">Website</a>';
-                website.className = "website";
-                innerDiv.appendChild(website);
-
-                $('#reps').append(div);
-              };
-              var viewmap = document.createElement('div');
-              viewmap.className = 'viewmap';
-              viewmap.innerHTML = '<p>Done calling? See your light on the map!</p><button type="button" class="btn btn-primary btn-lg viewmap">View Map</button>';
-              $('#reps').append(viewmap);
-            },
-            error: function () {
-                console.log('There was a problem with the request to geocode the address.');
-            }
-          });
+          lookupLegislators(loc["lat"], loc["lng"]);
         },
         error: function () {
             console.log('There was a problem with the request to geocode the address.');
@@ -229,7 +179,14 @@
             "name": { "value": name },
             "mail": { "value": email },
             "pass": { "value": password },
-            "field_light_location": { "value": JSON.stringify(city_loc) }
+            "field_location": [{
+              "lat": JSON.stringify(loc["lat"]),
+              "lng": JSON.stringify(loc["lng"])
+            }],
+            "field_city": [{
+              "lat": JSON.stringify(city_loc["lat"]),
+              "lng": JSON.stringify(city_loc["lng"])
+            }]
           })
         }).success( function(data) {
           $.get('/rest/session/token', function(token) {
@@ -295,7 +252,58 @@
       $('.map-overlay').hide();
     })
 
+    function lookupLegislators(lat, lng) {
+      $.ajax({
+        // Lookup user's representatives
+        url: 'https://openstates.org/api/v1/legislators/geo/?lat=' + lat + '&long=' + lng + '&apikey=' + OS_API_KEY,
+        type: "GET",
+        dataType: "jsonp",
+        success: function (reps) {
+          console.log(reps);
+          $("#reps").empty();
+          for (rep of reps) {
+            var div = document.createElement('div')
+            div.className = 'rep';
+            var photo = document.createElement('div');
+            console.log(rep.photo_url);
+            photo.style.backgroundImage = 'url(' + rep.photo_url +')';
+            photo.style.backgroundRepeat = 'no-repeat';
+            photo.className = 'photo';
+            div.appendChild(photo);
+            var innerDiv = document.createElement('div');
+            div.appendChild(innerDiv);
+            var name = document.createElement('h3');
+            name.innerHTML = rep.full_name;
+            name.className = 'name';
+            innerDiv.appendChild(name);
+            var role = document.createElement('div');
+            role.innerHTML = rep.party + (rep.chamber == 'lower' ? ' Representative ' : " Senator ") + 'for the ' + rep.district + ' District';
+            role.className = 'role';
+            innerDiv.appendChild(role);
+            for (office of rep.offices) {
+              if (office.phone) {
+                var phone = document.createElement('div');
+                phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now!</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
+                phone.className = 'phone';
+                innerDiv.appendChild(phone);
+              }
+            }
+            var website = document.createElement('div');
+            website.innerHTML = '<i class="fa fa-user-circle-o fa-lg fa-fw"></i><a href="' + rep.url + '">Website</a>';
+            website.className = "website";
+            innerDiv.appendChild(website);
+
+            $('#reps').append(div);
+          };
+          var viewmap = document.createElement('div');
+          viewmap.className = 'viewmap';
+          viewmap.innerHTML = '<p>Done calling? See your light on the map!</p><button type="button" class="btn btn-primary btn-lg viewmap">View Map</button>';
+          $('#reps').append(viewmap);
+        }
+      });
+    }
 })(jQuery);
+
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
