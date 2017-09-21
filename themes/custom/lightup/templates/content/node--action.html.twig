@@ -80,6 +80,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
       {% endif %}
         <h3>Share!</h3>
         <p>Are there places that aren't lit up yet? Share this action with friends and family! Let's light up the whole state!</p>
+        {{ block_socialsharing_output }}
       </div>
     </div>
     <div id="share-action">

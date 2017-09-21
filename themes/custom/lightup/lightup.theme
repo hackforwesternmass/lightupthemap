@@ -86,6 +86,11 @@ function lightup_preprocess_node(&$variables) {
   // add variable for node.html.twig
   $variables['location'] = $location;
   $variables['city'] = $city;
+
+  $block = \Drupal\block\Entity\Block::load('socialsharingblock');
+  $variables['block_socialsharing_output'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
 }
 
 /**

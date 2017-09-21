@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_city
+    - field.field.user.user.field_light_location
     - field.field.user.user.field_location
     - field.field.user.user.field_representative
     - field.field.user.user.field_representative_text
@@ -29,6 +31,20 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_city:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_light_location:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_location:
     weight: 1
     settings:
