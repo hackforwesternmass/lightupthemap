@@ -102,7 +102,7 @@ h2 {
 }
 .region-content {
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
-  background: rgba(000, 000, 000, 0.7);
+  background: rgba(000, 000, 000, 0.85);
   color: #ffffff;
   a, a:link, a:visited {
     color: $yellow;
@@ -110,6 +110,13 @@ h2 {
   }
   label {
     color: $yellow
+  }
+}
+.nodetype--page, .path--contact {
+  .region-content {
+    width: 680px;
+    padding: 20px;
+    margin: 0 auto;
   }
 }
 
@@ -246,7 +253,7 @@ aside .block, nav.breadcrumb {
 }
 
 .region-footer {
-  margin-top: 30px;
+  margin-top: 0px;
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
   background: rgba(000, 000, 000, 0.7);
   color: #ffffff;
@@ -440,4 +447,10 @@ button.btn-primary {
 }
 .leaflet-control a, .leaflet-control a:link {
   text-decoration: none;
+}
+html, body.nodetype--action {
+  height: 100%;
+  #pg__c, #main, .mq-main, #content, #content-area, .region-content, #block-lightup-content, .node--type-action, .content, #map {
+    height: 100%;
+  }
 }

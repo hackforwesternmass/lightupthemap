@@ -39,9 +39,6 @@ bootstrap:
     https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: {type: external, minified: true}
   dependencies:
     - core/jquery
-lights:
-  js:
-    js/map_lights.js: {}
 lights_user:
   js:
     js/map_lights_user.js: {}

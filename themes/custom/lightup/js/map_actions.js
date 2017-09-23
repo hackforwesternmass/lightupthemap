@@ -1,9 +1,11 @@
 var map; // Global map object
+var n;
 (function ($) {
 
     // initial stuff: create map and add base layer
     // Add base map
-    var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+
+    var baseLayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     });
     // Create map and set center and zoom.
@@ -34,8 +36,12 @@ var map; // Global map object
     function addDataToMap(data, map) {
         var dataLayer = L.geoJson(data, {
             onEachFeature: function(feature, layer) {
-                var popupText = feature.properties.name;
-                layer.bindPopup(popupText);
+              var html = feature.properties.field_representative_text;
+              var div = document.createElement("div");
+              div.innerHTML = html;
+              var name = div.textContent || div.innerText || "";
+              var popupText = feature.properties.title + ': a call was made to ' + name + ' on ' + feature.properties.created;
+              layer.bindPopup(popupText);
             }
         });
         // this is for no clustering
@@ -76,8 +82,8 @@ var map; // Global map object
     //     addDataToMapUser(data, map);
     // });
     // get the lights data
-    // this comes from a Drupal view admin/structure/views/view/map_lights_json
-    $.getJSON('/json-lights', function(data) {
+    // this comes from a Drupal view admin/structure/views/view/lights_json
+    $.getJSON('/lights-json/' + action_nid, function(data) {
         addDataToMap(data, map);
     });
     // get the districts data
