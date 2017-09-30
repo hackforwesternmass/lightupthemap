@@ -312,7 +312,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
             for (office of rep.offices) {
               if (office.phone) {
                 var phone = document.createElement('div');
-                phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now!</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
+                phone.innerHTML = '<i class="fa fa-lg fa-fw ' + (office.name == 'Capitol office'? ' fa-university' : ' fa-map-marker') + '"></i><span class="office-name">' + office.name +':</span> <button type="button" class="btn btn-primary" data-phone="' + office.phone + '">Call now</button><span class="phone-number"><a href="tel:' + office.phone + '">' + office.phone + '</a></span>';
                 phone.className = 'phone';
                 innerDiv.appendChild(phone);
               }

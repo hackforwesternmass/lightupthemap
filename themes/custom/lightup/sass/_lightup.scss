@@ -9,10 +9,11 @@
 
 html {
   background-image: url("/themes/custom/lightup/images/page_background.jpg");
-}
 
-h1, h2, h3, h4 {
-  color: $yellow;
+  h1, h2, h3, h4 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+  }
 }
 h2 {
   font-size: 150%;
@@ -39,8 +40,17 @@ h2 {
   z-index: 9999;
   padding: 1px;  // not sure why but this stops the gap
 }
+.logo img {
+  width: 40px;
+  margin: 10px;
+}
 .site-branding-text {
   padding: 10px 0;
+  vertical-align: top;
+  line-height: 50px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 30px;
 }
 .site-branding-name a, .site-branding-name a:hover{
   color: #000;
@@ -50,10 +60,12 @@ h2 {
 }
 #block-lightup-main-menu, #block-lightup-account-menu {
   display: inline-block;
-  font-size: 112.5%; // 16px > 18px
+  font-size: 15px; // 16px > 18px
   text-transform: uppercase;
   float: right;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-family: 'Open Sans';
+  font-weight: 600;
   ul.menu {
     li {
       margin: 2px 5px;
@@ -149,7 +161,9 @@ body.nodetype--light {
 }
 .action-title {
   color: $yellow;
-  font-size: 1.2rem;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 32px;
   cursor: pointer;
   margin-top: 20px;
   text-transform: uppercase;
@@ -339,11 +353,19 @@ aside .block, nav.breadcrumb {
   color: #fff;
   padding: 1px 20px 10px 20px;
   h1 {
-    color: #faca06;
+    color: $yellow;
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 25px;
   }
   button {
     margin: 20px auto;
+    padding: 5px 16px;
     display: block;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+    font-size: 15px;
   }
   .close {
     position: absolute;
@@ -391,7 +413,7 @@ form[name="address"] {
   padding: 0 20px;
 }
 .rep h3 {
-  margin: 5px;
+  margin: 5px 0;
 }
 .rep .photo {
   width: 120px;
@@ -417,6 +439,12 @@ form[name="address"] {
 }
 .rep .phone-number {
   display: none;
+}
+.modal-title {
+  img {
+    width: 25px;
+    margin-right: 8px;
+  }
 }
 .modal .modal-footer {
   text-align: center;
@@ -467,6 +495,9 @@ body {
     border-radius: 0;
     border: 0;
     box-shadow: none;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+    font-size: 15px;
   }
   .btn-primary {
     background-color: $yellow;
