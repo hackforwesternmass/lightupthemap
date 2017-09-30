@@ -167,21 +167,33 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
               if (localStorage.getItem('anonymousLights')) {
                 var anonLights = JSON.parse(localStorage.getItem('anonymousLights'));
                 for (node of anonLights) {
-                  jQuery.ajax({
+                  $.ajax({
                     url: '/node/' + node + '?_format=json',
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
                       'X-CSRF-Token': data.csrf_token
                     },
-                  }).done(function (node) {
-                      postLight(node.title[0].value, node.field_action[0].target_id, node.field_representative_text[0].value, {"lat": node.field_map[0].lat, "lng": node.field_map[0].lng})
-                      .done( function(data) {
-                        console.log(data);
+                  }).done(function (light) {
+                      postLight(light.title[0].value, light.field_action[0].target_id, light.field_representative_text[0].value, {"lat": light.field_map[0].lat, "lng": light.field_map[0].lng})
+                      .done( function(token) {
+                        $.get('/rest/session/token')
+                        .done( function(token) {
+                          console.log(token);
+                          $.ajax({
+                            url: '/node/' + node + '?_format=json',
+                            method: 'DELETE',
+                            headers: {
+                              'Content-Type': 'application/json',
+                              'X-CSRF-Token': token
+                            },
+                          })
+                        }).done( function() {
+                          // Successful update
+                          localStorage.setItem('anonymousLights', '');
+                        })
                       });
                       console.log(node);
-                      // Successful update
-                      localStorage.setItem('anonymousLights', '');
                   })
                   .fail( function() {
 
@@ -212,9 +224,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
 
     function postLight(action_title, action_nid, rep_name, city_loc) {
       var def = $.Deferred();
-      console.log("1");
       $.get('/rest/session/token', function(token) {
-        console.log("2");
         $.ajax({
           method: "POST",
           url: "/entity/node?_format=json",
