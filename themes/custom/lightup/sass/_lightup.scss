@@ -18,12 +18,16 @@ h2 {
   font-size: 150%;
   line-height: 120%;
 }
-
 .cog--mq {
   max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+}
+.mq-branding, .region-footer {
+  max-width: 1280px;
   margin: 0px auto;
+}
+.mq-footer {
+  background-color: #000;
 }
 // HEADER AND NAV
 
@@ -35,30 +39,26 @@ h2 {
   z-index: 9999;
   padding: 1px;  // not sure why but this stops the gap
 }
-#block-lightup-account-menu {
-  float: right;
-  margin-right: 20px;
-  font-size: 100%; // 16px > 18px
-  a, a:link, a:visited {
-    text-decoration: none;
-    color: #000000;
-    cursor: inherit;
-  }
-  a:hover {
-    color: $yellow;
-  }
+.site-branding-text {
+  padding: 10px 0;
+}
+.site-branding-name a, .site-branding-name a:hover{
+  color: #000;
 }
 #block-lightup-branding {
   display: inline-block;
 }
-#block-lightup-main-menu {
+#block-lightup-main-menu, #block-lightup-account-menu {
   display: inline-block;
   font-size: 112.5%; // 16px > 18px
   text-transform: uppercase;
-  padding: 0px 0px 10px 20px;
+  float: right;
+  margin-top: 20px;
   ul.menu {
     li {
       margin: 2px 5px;
+      border-right: 1px solid #333;
+      padding-right: 18px;
     }
   }
   a, a:link, a:visited {
@@ -67,16 +67,22 @@ h2 {
     cursor: inherit;
   }
   a:hover {
-    color: $yellow;
+    color: #000;
   }
+}
+#block-lightup-account-menu ul.menu li:last-child {
+  border-right: 0;
 }
 
 // CONTENT
 
 // added per http://savaslabs.com/2015/07/06/map-in-drupal-8.html
+.map-container {
+  height: 800px;
+}
 .map--front {
   // Set these to whatever you want.
-  height: 120vh;
+  height: 800px;
   width: 100%;
   @include breakpoint($small)  { height: 60vh; }
 }
@@ -255,7 +261,6 @@ aside .block, nav.breadcrumb {
 .region-footer {
   margin-top: 0px;
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
-  background: rgba(000, 000, 000, 0.7);
   color: #ffffff;
   padding: 20px;
   border-top: none;
@@ -322,14 +327,20 @@ aside .block, nav.breadcrumb {
   }
 }
 .map-overlay {
+  /*
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 500;
+  */
+  text-align: center;
   background: #000;
   color: #fff;
   padding: 1px 20px 10px 20px;
+  h1 {
+    color: #faca06;
+  }
   button {
     margin: 20px auto;
     display: block;
@@ -392,6 +403,7 @@ form[name="address"] {
 }
 .rep .phone {
   vertical-align: middle;
+  line-height: 32px;
 }
 .rep .office-name {
   width: 95px;
@@ -399,6 +411,9 @@ form[name="address"] {
 }
 .rep .fa:before {
   margin-right: 5px;
+}
+.rep .btn {
+  padding: 3px 8px;
 }
 .rep .phone-number {
   display: none;
@@ -435,10 +450,6 @@ form[name="address"] {
 .viewmap {
   text-align: center;
 }
-button.btn-primary {
-  background-color: #faca06;
-  border-color: #b49100;
-}
 .close {
   box-shadow: unset;
 }
@@ -448,9 +459,18 @@ button.btn-primary {
 .leaflet-control a, .leaflet-control a:link {
   text-decoration: none;
 }
-html, body.nodetype--action {
-  height: 100%;
-  #pg__c, #main, .mq-main, #content, #content-area, .region-content, #block-lightup-content, .node--type-action, .content, #map {
-    height: 100%;
+body {
+  .modal-backdrop.in {
+    opacity: 1;
+  }
+  .btn, .btn-lg {
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .btn-primary {
+    background-color: $yellow;
+    color: #000;
+    text-transform: capitalize;
   }
 }

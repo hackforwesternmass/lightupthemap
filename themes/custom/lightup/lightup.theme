@@ -80,6 +80,7 @@ function lightup_preprocess_node(&$variables) {
     $variables['attributes']['class'][] = Html::cleanCssIdentifier('entity--type-' . $variables['elements']['#entity_type']);
   }
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['user'] = $user->getUsername();
   // For Geolocation field:
   $location = $user->get('field_location')->getValue()[0];
   $city = $user->get('field_city')->getValue()[0];

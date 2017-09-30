@@ -17,7 +17,7 @@ var city_loc = { {% if logged_in %}
   "lat": {{ city['lat'] }},
   "lng": {{ city['lng'] }}{% endif %}
 };
-//var user_loc = {{ location }};
+var user = "{{ user }}";
 
 var logged_in = {% if logged_in %}true{% else %}false{% endif %};
 </script>
@@ -60,16 +60,15 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         <h4>Six calls can change the world!</h4>
       </div>
       <button type="button" class="btn btn-primary btn-lg take-action">
-        Take Action!
+        Light Up the Map!
       </button>
     </div>
     <div id="join-and-share" class="map-overlay row">
       <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
-      <h1>What's next?</h1>
       {% if logged_in %}
         <div class="col-sm-12">
       {% else %}
-        <div class="col-sm-6">
+        <div id="join" class="col-sm-6">
           <h3>Join Us!</h3>
           <p>Create an account to save time selecting your representatives and be able to see your past actions.</p>
           <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registerModal">
@@ -85,7 +84,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
     </div>
     <div id="share-action">
     </div>
-    <div id="map" class="map--front"></div>
+    <div class="map-container"><div id="map" class="map--front"></div></div>
     {#
     {{ content.field_map }}
     {{ content.field_image }}
@@ -153,14 +152,14 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="MakeACallLabel">Make A Call!</h4>
+        <h4 class="modal-title" id="MakeACallLabel">Make a Call!</h4>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-sm-6 action-reps">
+          <div class="col-md-6 action-reps">
             <div id="reps"></div>
           </div>
-          <div class="col-sm-6 action-script">
+          <div class="col-md-6 action-script">
             {{ content.body }}
           </div>
         </div>
@@ -174,11 +173,11 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
 
 <!-- Register Modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerLabel">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="registerLabel">Create an account</h4>
+        <h4 class="modal-title" id="registerLabel">Create an Account</h4>
       </div>
       <div class="modal-body">
         <form name="register">
@@ -191,7 +190,25 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         </form>
       </div>
       <div class="modal-footer">
-        Find Your Rep <i class="fa fa-arrow-right"></i> Make a Call <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> <b>Share</b>
+        Find Your Rep <i class="fa fa-arrow-right"></i> Make a Call <i class="fa fa-arrow-right"></i> Light Up the Map <i class="fa fa-arrow-right"></i> <b>Share</b>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Account Created Modal -->
+<div class="modal fade" id="accountCreatedModal" tabindex="-1" role="dialog" aria-labelledby="accountCreatedLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="accountCreatedLabel">Your account:</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your account was successfully registered. Next time you take an action, we will use this location to determine your legislators and post your light!</p>
+        <p>If you would like to change your address or see the actions you've taken, you can use the <a href="/user" title="My Account">My Account</a> link anytime.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
