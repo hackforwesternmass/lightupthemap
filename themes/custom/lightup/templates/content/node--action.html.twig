@@ -17,7 +17,7 @@ var city_loc = { {% if logged_in %}
   "lat": {{ city['lat'] }},
   "lng": {{ city['lng'] }}{% endif %}
 };
-var user = "{{ user }}";
+var user = "{% if logged_in %}{{ user }}{% endif %}";
 
 var logged_in = {% if logged_in %}true{% else %}false{% endif %};
 </script>
