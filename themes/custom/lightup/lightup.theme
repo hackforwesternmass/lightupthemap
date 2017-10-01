@@ -79,11 +79,12 @@ function lightup_preprocess_node(&$variables) {
   if (!empty($variables['elements']['#entity_type'])) {
     $variables['attributes']['class'][] = Html::cleanCssIdentifier('entity--type-' . $variables['elements']['#entity_type']);
   }
-  
+
   // check if there is a logged-in user
   if (\Drupal::currentUser()->isAuthenticated()) {
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
     $variables['user'] = $user->getUsername();
+    $variable["#cache"]["contexts"][] = 'user';
     // For Geolocation field:
     $location = $user->get('field_location')->getValue()[0];
     $city = $user->get('field_city')->getValue()[0];
