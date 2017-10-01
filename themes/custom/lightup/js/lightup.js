@@ -131,6 +131,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
             "X-CSRF-Token": token
           },
           data: JSON.stringify({
+            // Assign a random username
             "name": { "value": name },
             "mail": { "value": email },
             "pass": { "value": password },
