@@ -9,7 +9,8 @@
         "drupal/recaptcha": "^2.2",
         "drupal/restui": "^1.15",
         "drupal/social_media": "^1.2",
-        "drupal/metatag": "^1.2"
+        "drupal/metatag": "^1.2",
+        "drupal/email_registration": "^1.0@RC"
     },
     "replace": {
         "drupal/core": "~8.3"
