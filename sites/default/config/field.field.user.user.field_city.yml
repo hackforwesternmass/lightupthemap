@@ -11,8 +11,8 @@ id: user.user.field_city
 field_name: field_city
 entity_type: user
 bundle: user
-label: city
-description: ''
+label: 'Light location (city)'
+description: 'This is the location used for the lights you create. '
 required: false
 translatable: false
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_location
 entity_type: user
 bundle: user
 label: 'Your location'
-description: 'Choose your location. You can be as precise or as general as you like, but please include as least the town you live in. The location you enter here will be used for the location of the lights your place on the map. '
+description: 'Choose your location. You can be as precise or as general as you like, but please include as least the town you live in. This location is used to find your representative and senator.'
 required: true
 translatable: false
 default_value: {  }

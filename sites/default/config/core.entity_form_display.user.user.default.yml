@@ -12,7 +12,6 @@ dependencies:
     - field.field.user.user.field_senator_text
   module:
     - geolocation
-    - text
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -27,23 +26,44 @@ content:
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 6
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_city:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
-    type: geolocation_latlng
-    region: content
-  field_light_location:
-    weight: 8
+    weight: 2
     settings:
-      size: 60
-      placeholder: ''
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+      default_longitude: null
+      default_latitude: null
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
     third_party_settings: {  }
-    type: string_textfield
+    type: geolocation_googlegeocoder
     region: content
   field_location:
     weight: 1
@@ -80,42 +100,8 @@ content:
     third_party_settings: {  }
     type: geolocation_googlegeocoder
     region: content
-  field_representative:
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_representative_text:
-    weight: 4
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textfield
-    region: content
-  field_senator:
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_senator_text:
-    weight: 5
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textfield
-    region: content
   language:
-    weight: 7
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -124,4 +110,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_light_location: true
+  field_representative: true
+  field_representative_text: true
+  field_senator: true
+  field_senator_text: true
