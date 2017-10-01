@@ -2,7 +2,7 @@
 
     // initial stuff: create map and add base layer
     // Add base map
-    var baseLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    var baseLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     });
     // Create map and set center and zoom.
@@ -70,12 +70,13 @@
     //var userMarker = L.geoJson(null, userOptions); // DO NOT add to map.
     //var lightsMarker = L.geoJson(null, lightsOptions); // Same story.
 
-    // get the lights data for logged-in user
-    $.getJSON('/json-lights-user', function(data) {
-        addDataToMapUser(data, map);
-    });
+    // get the lights data for logged-in user (not used)
+    // $.getJSON('/json-lights-user', function(data) {
+    //     addDataToMapUser(data, map);
+    // });
     // get the lights data
-    $.getJSON('/json-lights', function(data) {
+    // this comes from a Drupal view admin/structure/views/view/map_lights_json
+    $.getJSON('/lights-json', function(data) {
         addDataToMap(data, map);
     });
     // get the districts data
@@ -134,6 +135,3 @@
     //map.addLayer( mcg );
 
 })(jQuery);
-
-
-

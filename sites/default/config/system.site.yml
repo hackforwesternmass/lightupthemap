@@ -1,11 +1,11 @@
 uuid: a6c8f5c0-895c-4d9d-b154-0b67a14fa093
-name: 'Light Up The Map'
+name: 'Light Up the Map'
 mail: lightupmap@gmail.com
 slogan: ''
 page:
   403: /node/37
   404: ''
-  front: /node/1
+  front: /node/73
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

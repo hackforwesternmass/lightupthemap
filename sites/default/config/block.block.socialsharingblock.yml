@@ -1,0 +1,20 @@
+uuid: 30befa40-8fe9-4420-af2a-6753508f21d3
+langcode: en
+status: false
+dependencies:
+  module:
+    - social_media
+  theme:
+    - lightup
+id: socialsharingblock
+theme: lightup
+region: content
+weight: 0
+provider: null
+plugin: social_sharing_block
+settings:
+  id: social_sharing_block
+  label: 'Social Sharing block'
+  provider: social_media
+  label_display: '0'
+visibility: {  }

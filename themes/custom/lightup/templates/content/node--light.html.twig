@@ -31,12 +31,20 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   {% endif %}
 
   <div class="content">
-    {{ content|without('comment', 'links') }}
+      {#the content variable contains all the content, we want certain fields#}
+      {{ content|without('comment', 'links', 'field_action', 'field_light_representative', 'body', 'field_light_senator', 'field_map') }}
+      {#below are the fields on this content, except the title#}
+      {{ content.body }}
+      {{ content.field_action }}
+
+      {# the fields below are new, do not exist on the current live site #}
+      {{ content.field_light_representative }}
+      {{ content.field_light_senator }}
+      {{ content.field_map }}
+
     <h2>The lights you have put on the map so far are shown below!</h2>
     <p> << <a href="/">Back to home page</a> to see everyone's lights.</p>
-
   </div>
-
 <!-- /content -->
 
   {% if content.links.terms %}
@@ -55,6 +63,9 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 
   {{ content.comment }}
 </article>
+
+{# the div below contains a map of the logged-in user's lights #}
+{# using json from: https://www.lightupthemap.com/json-lights-user #}
 <div id="map" class="map--front"></div>
 
 <!-- /article #node -->

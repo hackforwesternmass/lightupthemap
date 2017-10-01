@@ -1,0 +1,20 @@
+uuid: f411c18b-35d7-4441-9f43-ca9c3712e59a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_light_location
+  module:
+    - user
+id: user.user.field_light_location
+field_name: field_light_location
+entity_type: user
+bundle: user
+label: light_location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

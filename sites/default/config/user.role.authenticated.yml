@@ -15,6 +15,8 @@ permissions:
   - 'access site-wide contact form'
   - 'change own username'
   - 'create light content'
+  - 'delete any light content'
+  - 'delete own light content'
   - 'edit own light content'
   - 'search content'
   - 'use text format basic_html'

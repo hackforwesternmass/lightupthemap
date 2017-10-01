@@ -15,6 +15,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   editor: 0
   email_registration: 0
@@ -32,10 +33,15 @@ module:
   history: 0
   image: 0
   inline_entity_form: 0
+  kint: 0
   link: 0
   media_entity: 0
   media_entity_image: 0
   menu_ui: 0
+  metatag: 0
+  metatag_facebook: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   node: 0
   options: 0
   page_cache: 0
@@ -44,11 +50,13 @@ module:
   rdf: 0
   recaptcha: 0
   rest: 0
+  restui: 0
   search: 0
   serialization: 0
   shortcut: 0
   simplify: 0
   smtp: 0
+  social_media: 0
   system: 0
   taxonomy: 0
   telephone: 0

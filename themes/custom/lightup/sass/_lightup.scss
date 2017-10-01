@@ -9,21 +9,26 @@
 
 html {
   background-image: url("/themes/custom/lightup/images/page_background.jpg");
-}
 
-h1, h2, h3, h4 {
-  color: $yellow;
+  h1, h2, h3, h4 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+  }
 }
 h2 {
   font-size: 150%;
   line-height: 120%;
 }
-
 .cog--mq {
-  max-width: 80em;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin: 0;
+}
+.mq-branding, .region-footer {
+  max-width: 1280px;
   margin: 0px auto;
+}
+.mq-footer {
+  background-color: #000;
 }
 // HEADER AND NAV
 
@@ -35,30 +40,37 @@ h2 {
   z-index: 9999;
   padding: 1px;  // not sure why but this stops the gap
 }
-#block-lightup-account-menu {
-  float: right;
-  margin-right: 20px;
-  font-size: 100%; // 16px > 18px
-  a, a:link, a:visited {
-    text-decoration: none;
-    color: #000000;
-    cursor: inherit;
-  }
-  a:hover {
-    color: $yellow;
-  }
+.logo img {
+  width: 40px;
+  margin: 10px;
+}
+.site-branding-text {
+  padding: 10px 0;
+  vertical-align: top;
+  line-height: 50px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 30px;
+}
+.site-branding-name a, .site-branding-name a:hover{
+  color: #000;
 }
 #block-lightup-branding {
   display: inline-block;
 }
-#block-lightup-main-menu {
+#block-lightup-main-menu, #block-lightup-account-menu {
   display: inline-block;
-  font-size: 112.5%; // 16px > 18px
+  font-size: 15px; // 16px > 18px
   text-transform: uppercase;
-  padding: 0px 0px 10px 20px;
+  float: right;
+  margin-top: 25px;
+  font-family: 'Open Sans';
+  font-weight: 600;
   ul.menu {
     li {
       margin: 2px 5px;
+      border-right: 1px solid #333;
+      padding-right: 18px;
     }
   }
   a, a:link, a:visited {
@@ -67,16 +79,22 @@ h2 {
     cursor: inherit;
   }
   a:hover {
-    color: $yellow;
+    color: #000;
   }
+}
+#block-lightup-account-menu ul.menu li:last-child {
+  border-right: 0;
 }
 
 // CONTENT
 
 // added per http://savaslabs.com/2015/07/06/map-in-drupal-8.html
+.map-container {
+  height: 800px;
+}
 .map--front {
   // Set these to whatever you want.
-  height: 120vh;
+  height: 800px;
   width: 100%;
   @include breakpoint($small)  { height: 60vh; }
 }
@@ -102,16 +120,21 @@ h2 {
 }
 .region-content {
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
-  background: rgba(000, 000, 000, 0.7);
+  background: rgba(000, 000, 000, 0.85);
   color: #ffffff;
-  padding: 20px;
-  width: 60%;
   a, a:link, a:visited {
     color: $yellow;
     text-decoration: underline;
   }
   label {
     color: $yellow
+  }
+}
+.nodetype--page, .path--contact {
+  .region-content {
+    width: 680px;
+    padding: 20px;
+    margin: 0 auto;
   }
 }
 
@@ -138,7 +161,9 @@ body.nodetype--light {
 }
 .action-title {
   color: $yellow;
-  font-size: 1.2rem;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 32px;
   cursor: pointer;
   margin-top: 20px;
   text-transform: uppercase;
@@ -248,9 +273,8 @@ aside .block, nav.breadcrumb {
 }
 
 .region-footer {
-  margin-top: 30px;
+  margin-top: 0px;
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
-  background: rgba(000, 000, 000, 0.7);
   color: #ffffff;
   padding: 20px;
   border-top: none;
@@ -316,4 +340,168 @@ aside .block, nav.breadcrumb {
     height: 50px;
   }
 }
-
+.map-overlay {
+  /*
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 500;
+  */
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 1px 20px 10px 20px;
+  h1 {
+    color: $yellow;
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  button {
+    margin: 20px auto;
+    padding: 5px 16px;
+    display: block;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .close {
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    color: #fff;
+  }
+}
+#join-and-share {
+  display: none;
+}
+form[name="address"] {
+  width: 310px;
+  margin: 0 auto;
+  .form-group.street {
+    width: 310px;
+  }
+  .city-state {
+    display: flex;
+  }
+  .form-group.city {
+    width: 240px;
+  }
+  .form-group.state {
+    width: 48px;
+    margin-left: 20px;
+  }
+  .form-group input[type="text"] {
+    width: 100%;
+  }
+}
+.action-script {
+  padding: 0 10px;
+  border-right: #faca06 solid 1px;
+}
+.action-reps {
+  position: fixed;
+  right: 0;
+}
+.rep {
+  display: flex;
+  padding: 20px;
+}
+.rep > div {
+  padding: 0 20px;
+}
+.rep h3 {
+  margin: 5px 0;
+}
+.rep .photo {
+  width: 120px;
+  min-width: 120px;
+  max-height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.rep .phone {
+  vertical-align: middle;
+  line-height: 32px;
+}
+.rep .office-name {
+  width: 95px;
+  display: inline-block;
+}
+.rep .fa:before {
+  margin-right: 5px;
+}
+.rep .btn {
+  padding: 3px 8px;
+}
+.rep .phone-number {
+  display: none;
+}
+.modal-title {
+  img {
+    width: 25px;
+    margin-right: 8px;
+  }
+}
+.modal .modal-footer {
+  text-align: center;
+  color: #777;
+  a:link {
+    text-decoration: none;
+    color: #777;
+  }
+}
+.modal-footer b {
+  color: #333;
+}
+.modal-footer i {
+  color: #ccc;
+}
+.modal.in {
+    display: flex !important;
+    height: 100%;
+    color: #333;
+}
+.modal.in .modal-dialog {
+    margin: auto;
+}
+.modal-dialog {
+    overflow-y: initial !important
+}
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.viewmap {
+  text-align: center;
+}
+.close {
+  box-shadow: unset;
+}
+.nodetype--action .block-page-title-block, .nodetype--action .block-tabs {
+  display: none;
+}
+.leaflet-control a, .leaflet-control a:link {
+  text-decoration: none;
+}
+body {
+  .modal-backdrop.in {
+    opacity: 1;
+  }
+  .btn, .btn-lg {
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .btn-primary {
+    background-color: $yellow;
+    color: #000;
+    text-transform: capitalize;
+  }
+}

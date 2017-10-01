@@ -1,0 +1,32 @@
+<?php
+
+function lightupthemap_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // get the form id
+  // drupal_set_message($form_id);
+
+  // for node light add form only
+  if ($form_id == 'node_light_form') {
+
+    // to spit out the $form object
+    // uncomment below, but devel, and devel kint modules must be enabled
+    // kint($form);
+
+    $form['field_senator_text']['widget']['0']['#default_value'] = 'this is the senator';
+    $form['field_representative_text']['widget']['0']['#default_value'] = "this is the representative";
+  }
+}
+
+// form of node-edit-form--NODE-TYPE-SEPARATED-WITH-DASHES.html.twig.
+
+function lightupthemap_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    } else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
+  }
+}

@@ -1,0 +1,19 @@
+uuid: 5c4fb0cc-ca83-4ad1-9d80-d67e9508a2be
+langcode: en
+status: true
+dependencies:
+  module:
+    - geolocation
+    - user
+id: user.field_city
+field_name: field_city
+entity_type: user
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

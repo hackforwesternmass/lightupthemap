@@ -1,0 +1,20 @@
+uuid: 37a09383-73ea-4283-8c5a-57c59de83184
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_senator_text
+field_name: field_senator_text
+entity_type: node
+type: text
+settings:
+  max_length: 1024
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

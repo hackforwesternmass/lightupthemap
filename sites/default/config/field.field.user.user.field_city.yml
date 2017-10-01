@@ -1,0 +1,21 @@
+uuid: 56abe677-e6ce-4367-8114-bc3345662f7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_city
+  module:
+    - geolocation
+    - user
+id: user.user.field_city
+field_name: field_city
+entity_type: user
+bundle: user
+label: city
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

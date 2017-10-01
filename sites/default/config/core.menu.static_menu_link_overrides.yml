@@ -1,16 +1,16 @@
 definitions:
   contact__site_page:
-    weight: -48
-    menu_name: account
-    parent: ''
-    enabled: true
-    expanded: false
-  standard__front_page:
-    weight: -50
+    weight: -43
     menu_name: main
     parent: ''
     enabled: true
     expanded: false
+  standard__front_page:
+    enabled: false
+    menu_name: main
+    parent: ''
+    expanded: false
+    weight: -50
   user__page:
     weight: -50
     menu_name: account
