@@ -3,7 +3,7 @@ var MAPS_API_KEY = 'AIzaSyBuSeH7ueeVuaJs03xIwjtd7hbmShWZ_ew';
 var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
 
 (function ($) {
-  console.log(loc);
+  //console.log(loc);
     $('.action-info').hide();
     $( '.action-title' ).click(function() {
         $(this).next('.action-info').toggle();
