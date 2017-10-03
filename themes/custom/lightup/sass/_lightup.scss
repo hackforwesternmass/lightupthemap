@@ -41,9 +41,13 @@ h2 {
   z-index: 9999;
   padding: 1px;  // not sure why but this stops the gap
 }
-.logo img {
-  width: 40px;
-  margin: 10px;
+div.site-branding a.logo {
+  height: 60px;
+  width: auto;
+  img {
+    width: 40px;
+    margin: 10px;
+  }
 }
 .site-branding-text {
   padding: 10px 0;
@@ -264,7 +268,6 @@ aside .block, nav.breadcrumb {
 .field--name-field-senator {
   margin-top: 10px;
   .field__label {
-
   }
 }
 
@@ -440,6 +443,7 @@ form[name="address"] {
 .rep .office-name {
   width: 95px;
   display: inline-block;
+  text-transform: capitalize;
 }
 .rep .fa:before {
   margin-right: 5px;
@@ -448,6 +452,7 @@ form[name="address"] {
   padding: 0;
   height: 26px;
   width: 68px;
+  text-transform: capitalize;
 }
 .rep .btn:hover {
   font-size: 16px;
@@ -462,11 +467,14 @@ form[name="address"] {
     margin-right: 8px;
   }
 }
-.modal a:link, .modal a:visited {
+.modal label {
   color: #000;
+}
+.modal a:link, .modal a:visited, #content .modal .field--name-body a, #content .modal .field--name-body a:link, #content .modal .field--name-body a:visited {
+  color: $green;
   text-decoration: none;
 }
-.modal a:hover {
+.modal a:hover, #content .modal .field--name-body a:hover {
   text-decoration: underline;
 }
 .modal .modal-footer {
@@ -528,7 +536,7 @@ body {
   .btn-primary {
     background-color: $yellow;
     color: #000;
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
   .btn-primary:hover {
     background-color: #ffe049;

@@ -349,7 +349,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
           };
           var viewmap = document.createElement('div');
           viewmap.className = 'viewmap';
-          viewmap.innerHTML = '<p>Done calling? See your light on the map!</p><button type="button" class="btn btn-primary btn-lg viewmap">View Map</button>';
+          viewmap.innerHTML = "<p><b>When you're done calling:</b></p><button type='button' class='btn btn-primary btn-lg viewmap'>See how you Lit Up the Map</button>";
           $('#reps').append(viewmap);
         }
       });
