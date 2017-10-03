@@ -131,9 +131,9 @@ h2 {
     color: $yellow
   }
 }
-.nodetype--page, .path--contact {
+.nodetype--page, .path--contact, .path--user {
   .region-content {
-    width: 680px;
+    max-width: 680px;
     padding: 20px;
     margin: 0 auto;
   }
@@ -308,6 +308,7 @@ aside .block, nav.breadcrumb {
   position: relative;
 }
 .back-to-top {
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 10px;
@@ -342,31 +343,38 @@ aside .block, nav.breadcrumb {
   }
 }
 .map-overlay {
-  /*
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 500;
-  */
   text-align: center;
   background: #000;
   color: #fff;
-  padding: 1px 20px 10px 20px;
+  padding: 2px 20px 18px 20px;
   h1 {
+    margin-top: 9px;
+    margin-bottom: 0;
     color: $yellow;
     font-size: 32px;
   }
+  h3 {
+    color: $yellow;
+  }
   h4 {
+    margin-top: 0;
     font-size: 25px;
+    color: #fff;
   }
   button {
-    margin: 20px auto;
-    padding: 5px 16px;
     display: block;
+    width: 160px;
+    height: 35px;
+    margin: auto;
+    padding: 0;
     font-family: 'Open Sans Condensed';
     font-weight: 700;
     font-size: 15px;
+  }
+  button:hover {
+    background-color: #ffe049;
+    color: #000;
+    font-size: 16px;
   }
   .close {
     position: absolute;
@@ -415,6 +423,7 @@ form[name="address"] {
 }
 .rep h3 {
   margin: 5px 0;
+  color: #000;
 }
 .rep .photo {
   width: 120px;
@@ -436,24 +445,40 @@ form[name="address"] {
   margin-right: 5px;
 }
 .rep .btn {
-  padding: 3px 8px;
+  padding: 0;
+  height: 26px;
+  width: 68px;
+}
+.rep .btn:hover {
+  font-size: 16px;
 }
 .rep .phone-number {
   display: none;
 }
 .modal-title {
+  color: #000;
   img {
     width: 25px;
     margin-right: 8px;
   }
 }
+.modal a:link, .modal a:visited {
+  color: #000;
+  text-decoration: none;
+}
+.modal a:hover {
+  text-decoration: underline;
+}
 .modal .modal-footer {
   text-align: center;
   color: #777;
-  a:link {
+}
+.modal .modal-footer a, .modal .modal-footer a:link, .modal .modal-footer a:visited {
     text-decoration: none;
-    color: #777;
-  }
+    color: #000;
+}
+.modal-footer a:hover {
+  text-decoration: underline;
 }
 .modal-footer b {
   color: #333;
@@ -505,5 +530,8 @@ body {
     color: #000;
     text-transform: capitalize;
   }
+  .btn-primary:hover {
+    background-color: #ffe049;
+    color: #000;
+  }
 }
-

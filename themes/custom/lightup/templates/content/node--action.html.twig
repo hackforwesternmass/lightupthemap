@@ -54,7 +54,6 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
     {{ content|without('comment', 'links', 'field_date', 'field_expiration_date', 'body', 'field_image', 'field_map') }}
     {#below are the fields on this content, except the title#}
     <div id="take-action" class="map-overlay">
-      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
       <div>
         <h1>{{ label }}</h1>
         <h4>Six calls can change the world.</h4>
@@ -64,7 +63,6 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
       </button>
     </div>
     <div id="join-and-share" class="map-overlay row">
-      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
       {% if logged_in %}
         <div class="col-sm-12">
       {% else %}

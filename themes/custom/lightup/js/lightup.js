@@ -219,9 +219,6 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
     $('.modal').on('hidden.bs.modal', function (e) {
       $('body').css('overflow','auto');
     })
-    $('.map-overlay .close').on('click', function(e) {
-      $('.map-overlay').hide();
-    })
 
     function postLight(action_title, action_nid, rep_name, city_loc) {
       var def = $.Deferred();
@@ -319,7 +316,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
               }
             }
             var website = document.createElement('div');
-            website.innerHTML = '<i class="fa fa-user-circle-o fa-lg fa-fw"></i><a href="' + rep.url + '">Website</a>';
+            website.innerHTML = '<i class="fa fa-user-circle-o fa-lg fa-fw"></i><a target="_blank" href="' + rep.url + '">Website</a>';
             website.className = "website";
             innerDiv.appendChild(website);
 
