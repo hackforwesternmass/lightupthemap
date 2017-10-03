@@ -164,6 +164,11 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
               $('#registerModal').modal('hide');
               $('#join').hide();
               $('#accountCreatedModal').modal();
+
+              // Update the user menu
+              $('#block-lightup-account-menu ul').empty();
+              $('#block-lightup-account-menu ul').html('<li><a href="/user" data-drupal-link-system-path="user">My account</a></li><li><a href="/user/logout" data-drupal-link-system-path="user/logout">Log out</a></li>');
+
               // Update any lights created before the account was registered
               if (localStorage.getItem('anonymousLights')) {
                 var anonLights = JSON.parse(localStorage.getItem('anonymousLights'));
