@@ -184,7 +184,6 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
                       .done( function(token) {
                         $.get('/rest/session/token')
                         .done( function(token) {
-                          console.log(token);
                           $.ajax({
                             url: '/node/' + node + '?_format=json',
                             method: 'DELETE',
@@ -212,6 +211,16 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
             console.log(data);
           });
         }).fail( function(data) {
+          $('.form-errors').empty();
+          var re = /username/g;
+          if (re.exec(data.responseText)) {
+            $('.form-errors').append('<div class="alert alert-danger" role="alert">That username is already taken. Please user another name for your account.</div>');
+          };
+          var re = /email/g;
+          if (re.exec(data.responseText)) {
+            $('.form-errors').append('<div class="alert alert-danger" role="alert">There is already an account with that email address. Please <a href="/user/login">login</a> or request a <a href="/user/password">password reset</a>.</div>');
+          };
+          console.log("Error creating account:");
           console.log(data);
         });
       });
