@@ -88,7 +88,19 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
           anonLights.push(data.nid[0].value);
           localStorage.setItem('anonymousLights', JSON.stringify(anonLights));
         }
-        var marker = new L.marker(loc, { riseOnHover: true }).addTo(map);
+        var greenIcon = L.icon({
+          iconUrl: '/themes/custom/lightup/images/leaflet/bulb_green.png',
+          iconSize: [50,82],
+          iconAnchor: [25, 60],
+          popupAnchor: [0,-50]
+        });
+        var marker = new L.marker(loc, {
+          icon: greenIcon,
+          riseOnHover: true,
+          zIndexOffset: 1
+        })
+        .addTo(map)
+        .bindPopup(action_title + ": You made a call to " + rep_name).openPopup();;
       });
 
       // Display call counter
