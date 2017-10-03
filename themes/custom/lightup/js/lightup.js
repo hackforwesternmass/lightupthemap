@@ -80,8 +80,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
       $.when( postLight(action_title, action_nid, rep_name, city_loc) )
       .then( function(data) {
         console.log(data);
-        if (!localStorage.getItem('Drupal.visitor.mail')) {
-          console.log('No mail in storage');
+        if (!logged_in) {
           var anonLights = [];
           if (localStorage.getItem('anonymousLights')) {
             anonLights = JSON.parse(localStorage.getItem('anonymousLights'));
