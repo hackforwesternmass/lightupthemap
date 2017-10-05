@@ -11,8 +11,7 @@
         "drupal/social_media": "^1.2",
         "drupal/metatag": "^1.2",
         "drupal/email_registration": "^1.0@RC",
-        "drupal/address": "^1.2",
-        "drupal/honeypot": "^1.27"
+        "drupal/address": "^1.2"
     },
     "replace": {
         "drupal/core": "~8.3"
