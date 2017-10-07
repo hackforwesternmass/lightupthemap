@@ -280,7 +280,7 @@ aside .block, nav.breadcrumb {
   margin-top: 0px;
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
   color: #ffffff;
-  padding: 20px;
+  padding: 10px;
   border-top: none;
   a, a:link, a:visited {
     color: $yellow;
@@ -291,15 +291,17 @@ aside .block, nav.breadcrumb {
   }
   #block-lightup-footer {
     ul.menu {
+      li:nth-child(1) {
+        margin-top: 15px;
+      }
       li:nth-child(2) {
         float: right;
-        width: 101px; height: 50px;
-        background: url("../images/H4WM.png") no-repeat;
-        font-size: 1px;
-        color: white;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         a {
+          display: inline-block;
           color: transparent;
+          width: 101px; height: 50px;
+          background: url("../images/H4WM.png") no-repeat;
         }
       }
     }
