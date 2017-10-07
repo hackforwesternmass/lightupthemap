@@ -289,6 +289,21 @@ aside .block, nav.breadcrumb {
   a:hover {
     color: $green;
   }
+  #block-lightup-footer {
+    ul.menu {
+      li:nth-child(2) {
+        float: right;
+        width: 101px; height: 50px;
+        background: url("../images/H4WM.png") no-repeat;
+        font-size: 1px;
+        color: white;
+        margin-bottom: 20px;
+        a {
+          color: transparent;
+        }
+      }
+    }
+  }
 }
 
 #block-userregister {
