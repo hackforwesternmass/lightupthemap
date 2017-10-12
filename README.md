@@ -88,7 +88,27 @@ Local setup using your own local stack (MAMP or whatever)
 Notes on theme used (needed for css work)
 ----
 * The theme uses SASS.  SCSS files are located in /themes/custom/lightup/sass
-* Compile SASS by runnning `gulp watch` in the root of the site.
+* Compile SASS by runnning `gulp compile:sass` or `gulp watch:sass` in the root of the site.
+* These are all the available gulp tasks:
+`gulp`
+`gulp build`
+`gulp build:dev`
+`gulp clean`
+`gulp clean:css`
+`gulp clean:styleguide`
+`gulp compile:sass`
+`gulp compile:styleguide`
+`gulp lint:js`
+`gulp lint:css`
+`gulp minify:css`
+`gulp serve`
+`gulp test:css`
+`gulp watch`
+`gulp watch:js`
+`gulp watch:sass`
+`gulp watch:styleguide`
+
+* When you cd into /themes/custom/lightup you will probably need to:  `nvm use 4.4.4`
 
 Above should be all you need, below is more info.
  
