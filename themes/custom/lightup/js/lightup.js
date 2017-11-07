@@ -354,6 +354,7 @@ var OS_API_KEY = '2adfa609-63df-4a8d-bd7c-a243ec2b873f';
         }
       });
     }
+    $('.modal a').attr('target', '_blank');
 })(jQuery);
 
 
