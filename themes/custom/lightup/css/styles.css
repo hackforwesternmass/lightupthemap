@@ -948,7 +948,7 @@ aside .block h2 {
 div.site-branding a.logo {
   width: 80px;
   display: inline-block;
-  padding: 0px 0px 0 10px;
+  padding: 0px 0px 0px 0px;
   margin-bottom: 0px;
 }
 
@@ -1092,6 +1092,11 @@ div.site-branding a.logo img {
   font-weight: 600;
   font-size: 30px;
 }
+@media screen and (max-width: 440px) {
+  .site-branding-text {
+    font-size: 26px;
+  }
+}
 
 .site-branding-name a, .site-branding-name a:hover {
   color: #000;
@@ -1116,6 +1121,10 @@ div.site-branding a.logo img {
   border-right: 1px solid #333;
   padding-right: 18px;
 }
+#block-lightup-main-menu ul.menu li:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
 
 #block-lightup-main-menu a, #block-lightup-main-menu a:link, #block-lightup-main-menu a:visited, #block-lightup-account-menu a, #block-lightup-account-menu a:link, #block-lightup-account-menu a:visited {
   text-decoration: none;
@@ -1131,10 +1140,6 @@ div.site-branding a.logo img {
   border-right: 0;
 }
 
-.map-container {
-  height: 800px;
-}
-
 .map--front {
   height: 800px;
   width: 100%;
@@ -1143,6 +1148,19 @@ div.site-branding a.logo img {
 @media only screen and (max-width: 767px) {
   .map--front {
     height: 60vh;
+  }
+  .region-branding {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #block-lightup-branding {
+    margin: auto;
+  }
+  #block-lightup-main-menu {
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -1505,7 +1523,6 @@ form[name="address"] .form-group input[type="text"] {
 
 .action-script {
   padding: 0 10px;
-  border-right: #faca06 solid 1px;
 }
 
 .action-reps {
@@ -1620,6 +1637,7 @@ form[name="address"] .form-group input[type="text"] {
 
 .modal.in .modal-dialog {
   margin: auto;
+  max-width: 100%;
 }
 
 .modal-dialog {
