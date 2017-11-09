@@ -562,3 +562,11 @@ body {
     color: #000;
   }
 }
+
+@include breakpoint($small) {
+  .user-login-form {
+    input {
+      width: 99% !important;
+    }
+  }
+}
