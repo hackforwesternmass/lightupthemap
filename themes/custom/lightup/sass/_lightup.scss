@@ -8,7 +8,8 @@
 // PAGE
 
 html {
-  background-image: url("/themes/custom/lightup/images/page_background.jpg");
+ // background-image: url("/themes/custom/lightup/images/page_background.jpg");
+  background-color: #000000;
 
   h1, h2, h3, h4 {
     color: $yellow;
@@ -113,6 +114,7 @@ div.site-branding a.logo {
 }
 
 #content {
+  background-image: url("/themes/custom/lightup/images/page_background.jpg");
   .field--name-body {
     a, a:link, a:visited {
       color: $yellow;
@@ -137,7 +139,7 @@ div.site-branding a.logo {
 }
 .nodetype--page, .path--contact, .path--user {
   .region-content {
-    max-width: 680px;
+    max-width: 960px;
     padding: 20px;
     margin: 0 auto;
   }
