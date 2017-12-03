@@ -385,7 +385,7 @@ aside .block, nav.breadcrumb {
   }
   button {
     display: block;
-    width: 160px;
+    width: 250px; //160px;
     height: 35px;
     margin: auto;
     padding: 0;
@@ -403,6 +403,9 @@ aside .block, nav.breadcrumb {
     right: 10px;
     margin: 0;
     color: #fff;
+  }
+  .steps {
+    margin-top: 15px;
   }
 }
 #join-and-share {
@@ -569,4 +572,32 @@ body {
       width: 99% !important;
     }
   }
+}
+
+#makeACallModal {
+  a {
+    color: #777;
+    text-decoration: none;
+  }
+  a:hover  {
+    text-decoration: underline;
+  }
+}
+
+.take-action {
+  display: inline-block;
+  width: 20%;
+}
+.steps {
+  display: inline-block;
+}
+.active-step {
+  color: $green;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 5px;
+}
+img.active-icon {
+  margin-left: 5px;
+  margin-right: 5px;
 }

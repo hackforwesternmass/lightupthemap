@@ -59,8 +59,9 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         <h4>Six calls can change the world.</h4>
       </div>
       <button type="button" class="btn btn-primary btn-lg take-action">
-        LIGHT UP THE MAP!
+        CLICK HERE TO LIGHT UP THE MAP!
       </button>
+      <div class="steps"> Find Your Rep <i class="fa fa-arrow-right"></i> Make a Call <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share </div>
     </div>
     <div id="join-and-share" class="map-overlay row">
       {% if logged_in %}
@@ -140,7 +141,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         </form>
       </div>
       <div class="modal-footer">
-        <b>Find Your Rep</b> <i class="fa fa-arrow-right"></i> Make a Call <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
+        <img src="/themes/custom/lightup/images/logo_icon.png"><span class="active-step">Find Your Rep</span> <i class="fa fa-arrow-right"></i> Make a Call <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
       </div>
     </div>
   </div>
@@ -151,8 +152,11 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="MakeACallLabel"><img src="/themes/custom/lightup/images/lightupthemap_logo.png">Take Action!</h4>
-      </div>
+        <h4 class="modal-title take-action" id="MakeACallLabel"><img src="/themes/custom/lightup/images/lightupthemap_logo.png" class="active-icon">Take Action!</h4>
+        <div class="steps">
+        <a id="find-your-rep">Find Your Rep</a> <i class="fa fa-arrow-right"></i> <img src="/themes/custom/lightup/images/logo_icon.png"> <span class="active-step">Make a Call</span> <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
+        </div>
+        </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-md-6 action-reps">
@@ -164,7 +168,7 @@ var logged_in = {% if logged_in %}true{% else %}false{% endif %};
         </div>
       </div>
       <div class="modal-footer">
-        <a id="find-your-rep">Find Your Rep</a> <i class="fa fa-arrow-right"></i> <b>Make a Call</b> <i class="fa fa-arrow-right"></i> Light up the Map <i class="fa fa-arrow-right"></i> Share
+        <div class="viewmap"><p><b>When you're done calling:</b></p><button type='button' class='btn btn-primary btn-lg viewmap'>See how you Lit Up the Map</button></div>
       </div>
     </div>
   </div>
