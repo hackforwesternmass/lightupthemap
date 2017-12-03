@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f99f9923fdd12273d7d855b13f6c299",
+    "content-hash": "ac59ab47bda5b9f970ed4c53c53a11e7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1091,6 +1091,55 @@
             "support": {
                 "source": "http://git.drupal.org/project/recaptcha.git",
                 "issues": "https://www.drupal.org/project/issues/recaptcha"
+            }
+        },
+        {
+            "name": "drupal/responsive_menu",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/responsive_menu",
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/responsive_menu-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "f78b25a242a04fb2a9fa004415ccc1af3c1140f8"
+            },
+            "require": {
+                "drupal/core": "^8.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.5",
+                    "datestamp": "1507722544",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tancredi D'Onofrio (tanc)",
+                    "homepage": "https://www.drupal.org/u/tanc",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a javascript based off-canvas responsive menu with depth. At wider browser widths it provides a horizontal menu capable of drop downs and flyouts",
+            "homepage": "https://drupal.org/project/responsive_menu",
+            "support": {
+                "source": "https://cgit.drupalcode.org/responsive_menu",
+                "issues": "https://drupal.org/project/issues/responsive_menu"
             }
         },
         {
