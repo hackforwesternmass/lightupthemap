@@ -597,6 +597,14 @@ body {
   display: inline-block;
   margin-left: 5px;
 }
+.map-overlay {
+  .steps-last {
+    margin-top: 0;
+  }
+  .active-step {
+    color: $yellow;
+  }
+}
 img.active-icon {
   margin-left: 5px;
   margin-right: 5px;
