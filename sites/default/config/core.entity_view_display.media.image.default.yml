@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.media.image.field_caption
     - field.field.media.image.field_image
-    - image.style.large
     - media_entity.bundle.image
   module:
     - image
@@ -26,7 +25,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: large
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image

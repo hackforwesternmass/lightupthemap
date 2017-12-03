@@ -7,4 +7,30 @@ _core:
 id: global
 label: Global
 tags:
+  description: "Six calls can change the world! Light Up the Map is a powerful way to work together across Massachusetts to make our voices heard about important climate policies.\r\n"
   title: '[current-page:title] | [site:name]'
+  geo_region: US-MA
+  geo_placename: Massachusetts
+  og_image_secure_url: 'https://www.lightupthemap.com/sites/default/files/2017-11/TakeActionLightUpTheMap.jpg'
+  article_publisher: 'https://www.facebook.com/groups/MothersOutFront.PV'
+  og_description: 'Six calls can change the world! Light Up the Map is a powerful way to work together across Massachusetts to make our voices heard about important climate policies.'
+  og_image: 'https://www.lightupthemap.com/sites/default/files/2017-11/TakeActionLightUpTheMap.jpg'
+  og_country_name: US
+  og_locality: MA
+  og_image_height: '650'
+  og_site_name: 'Light Up the Map'
+  og_image_width: '1200'
+  og_image_type: image/jpeg
+  article_author: MothersOutFront.PV
+  og_title: 'Take Action!'
+  twitter_cards_image_alt: 'Take Action!'
+  twitter_cards_image: 'https://www.lightupthemap.com/sites/default/files/2017-11/TakeActionLightUpTheMap.jpg'
+  twitter_cards_image_width: '650'
+  twitter_cards_creator_id: '3054459982'
+  twitter_cards_type: summary_large_image
+  twitter_cards_creator: '@MOFpv'
+  twitter_cards_image_height: '1200'
+  twitter_cards_title: 'Light Up the Map!'
+  twitter_cards_description: 'Six calls can change the world! Light Up the Map is a powerful way to work together across Massachusetts to make our voices heard about important climate policies.'
+  twitter_cards_site_id: '3054459982'
+  twitter_cards_site: '@MOFpv'
