@@ -114,7 +114,7 @@ div.site-branding a.logo {
 }
 
 #content {
-  background-image: url("/themes/custom/lightup/images/page_background.jpg");
+  // background-image: url("/themes/custom/lightup/images/page_background.jpg");
   .field--name-body {
     a, a:link, a:visited {
       color: $yellow;
@@ -406,6 +406,7 @@ aside .block, nav.breadcrumb {
   }
   .steps {
     margin-top: 15px;
+    //font-size: 1.7rem;
   }
 }
 #join-and-share {
@@ -586,7 +587,10 @@ body {
 
 .take-action {
   display: inline-block;
-  width: 20%;
+  width: 100%;
+  @include breakpoint($medium-max)  {
+    width: 20%;
+  }
 }
 .steps {
   display: inline-block;
@@ -608,4 +612,12 @@ body {
 img.active-icon {
   margin-left: 5px;
   margin-right: 5px;
+}
+.scroll-for-script {
+  h3 {
+    margin: auto;
+  }
+  @media screen and (min-width: 991px){
+  display: none;
+  }
 }
