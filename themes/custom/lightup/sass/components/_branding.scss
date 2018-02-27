@@ -19,6 +19,13 @@
   a:hover {
     color: $yellow;
     text-decoration: none;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 323px) {
+  .site-branding-text {
+    margin: auto;
+    width: 50%;
   }
 }
 // logo values
@@ -27,4 +34,7 @@ div.site-branding a.logo {
   display: inline-block;
   padding: 0px 0px 0 10px;
   margin-bottom: 0px;
+}
+.space-maker {
+  height: 0px;
 }
