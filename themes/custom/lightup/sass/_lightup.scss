@@ -40,7 +40,8 @@ h2 {
   width: 100%;
   clear: both;
   z-index: 9999;
-  padding: 1px;  // not sure why but this stops the gap
+  //padding: 1px;  // not sure why but this stops the gap
+	//removed as it was extending the width of the page, creating a horizontal scrollbar
 }
 div.site-branding a.logo {
   height: 60px;
@@ -70,8 +71,10 @@ div.site-branding a.logo {
   text-transform: uppercase;
   float: right;
   margin-top: 25px;
+  margin-bottom: 25px;
   font-family: 'Open Sans';
   font-weight: 600;
+  cursor: pointer;
   ul.menu {
     li {
       margin: 2px 5px;
@@ -82,10 +85,10 @@ div.site-branding a.logo {
   a, a:link, a:visited {
     text-decoration: none;
     color: #000000;
-    cursor: inherit;
+    cursor: pointer;
   }
   a:hover {
-    color: #000;
+    color: #fff;
   }
 }
 #block-lightup-account-menu ul.menu li:last-child {
@@ -96,7 +99,7 @@ div.site-branding a.logo {
 
 // added per http://savaslabs.com/2015/07/06/map-in-drupal-8.html
 .map-container {
-  height: 800px;
+  //height: 800px;
 }
 .map--front {
   // Set these to whatever you want.
@@ -279,6 +282,7 @@ aside .block, nav.breadcrumb {
 }
 
 .region-footer {
+  font-size: 15px;
   margin-top: 0px;
   background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
   color: #ffffff;
@@ -290,6 +294,7 @@ aside .block, nav.breadcrumb {
   }
   a:hover {
     color: $green;
+	cursor: pointer;
   }
   #block-lightup-footer {
     ul.menu {
@@ -309,7 +314,13 @@ aside .block, nav.breadcrumb {
     }
   }
 }
-
+@media screen and (max-width: 395px) {
+  .region-footer #block-lightup-footer ul.menu li:nth-child(2) a {
+    width: 100px;
+	margin-right: 44%;
+	margin-top: 20px;
+  }
+}
 #block-userregister {
   margin-top: 30px;
   //background: rgb(000, 000, 000); /* Fall-back for browsers that don't support rgba */
