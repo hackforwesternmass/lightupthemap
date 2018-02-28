@@ -282,6 +282,7 @@
 	}
 .leaflet-bar a:hover {
 	background-color: #f4f4f4;
+	cursor: default;
 	}
 .leaflet-bar a:first-child {
 	border-top-left-radius: 4px;
