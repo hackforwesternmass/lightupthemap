@@ -9,6 +9,9 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+#block-lightup-footer .menu-collapser {
+	visibility: hidden;
+}
 .collapse-button {
   position: absolute;
   right: 8px;
