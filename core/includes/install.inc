@@ -510,12 +510,12 @@ function drupal_install_config_directories() {
     ]));
   }
   elseif (is_writable($config_directories[CONFIG_SYNC_DIRECTORY])) {
-    // Put a README.md into the sync config directory. This is required so that
+    // Put a README.txt into the sync config directory. This is required so that
     // they can later be added to git. Since this directory is auto-created, we
     // have to write out the README rather than just adding it to the drupal core
     // repo.
     $text = 'This directory contains configuration to be imported into your Drupal site. To make this configuration active, visit admin/config/development/configuration/sync.' . ' For information about deploying configuration between servers, see https://www.drupal.org/documentation/administer/config';
-    file_put_contents(config_get_config_directory(CONFIG_SYNC_DIRECTORY) . '/README.md', $text);
+    file_put_contents(config_get_config_directory(CONFIG_SYNC_DIRECTORY) . '/README.txt', $text);
   }
 }
 
