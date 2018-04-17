@@ -15,13 +15,23 @@ If you have bower installed you can change directory into the responsive_menu
 module directory and run `bower install`. This will create a `libraries`
 directory which you _must_ move to your Drupal root.
 
+## Drush make method:
+
+From your Drupal root you can run drush make with the following parameters:
+```
+drush make --no-core modules/contrib/responsive_menu/responsive_menu.make.yml . @none
+```
+
+Adjust the path to the responsive_menu make file as needed. This will install
+the needed third party libraries in `/libraries`.
+
 ## Manual method:
 
 The only library required by this module is the
 [mmenu](http://mmenu.frebsite.nl) plugin. You need to download the jQuery
 version and place it in `/libraries` in your docroot (create the directory if
 you need to). Rename your newly placed download to mmenu, so the resulting path
-is `/libraries/mmenu`. This module will look in `/libraries/mmenu/dist/js` for
+is `/libraries/mmenu`. This module will look in `/libraries/mmenu/dist` for
 the javascript files so ensure you have the correct file structure.
 
 The other two libraries which add functionality (if desired) are the
@@ -81,5 +91,4 @@ hammerjs: MIT mmenu: Creative Commons Attribution-NonCommercial superfish: MIT
 The mmenu plugin used to have an MIT license but has changed to the CC
 NonCommercial license. So you'll need to pay the developer a fee to use it in a
 commercial web site. Alternatively you can download the earlier MIT licensed
-version which should be compatible. This module will track the latest stable
-version.
+version which should be compatible.

@@ -14,30 +14,50 @@
     attach: function (context) {
       $(context).find('body').once('responsive-menu-mmenu').each(function() {
 
-        if (typeof($.mmenu) != 'undefined') {
+        if (typeof($.mmenu) !== 'undefined') {
 
           // Get the position and theme options from Drupal settings.
-          var position = drupalSettings.responsive_menu.position;
-          var theme = drupalSettings.responsive_menu.theme;
+          var position = drupalSettings.responsive_menu.position,
+            theme = drupalSettings.responsive_menu.theme,
+            pagedim = drupalSettings.responsive_menu.pagedim,
+            extension_keyboard = drupalSettings.responsive_menu.extension_keyboard;
 
-          // Set up the off canvas menu.
-          $('#off-canvas').mmenu({
-            extensions: [theme, 'effect-slide-menu'],
+          var settings = {
+            extensions: [
+              theme,
+              'effect-slide-menu',
+              position === 'left' ? 'position-left' : 'position-right'
+            ],
             offCanvas: {
               zposition: 'next',
               position: position
-            },
-            keyboardNavigation: {
-              enable: true,
-              enhance: true
             },
             screenReader: {
               aria: true,
               text: true
             }
-          }, {
-            clone: false
-          });
+          };
+
+          var options = {
+            clone: false,
+            classNames: {
+              selected: "menu__item--active-trail"
+            }
+          };
+
+          if (extension_keyboard) {
+            settings.keyboardNavigation = {
+              enable: true,
+              enhance: true
+            }
+          }
+
+          if (pagedim !== 'none') {
+            settings.extensions.push(pagedim);
+          }
+
+          // Set up the off canvas menu.
+          $('#off-canvas').mmenu(settings, options);
 
           // Fix some quirks with Firefox rendering the toolbar in an odd position.
           if ($('#toolbar-administration').length > 0) {
@@ -82,7 +102,7 @@
         }
 
         // Add the Hammer config if needed.
-        if (typeof(Hammer) != 'undefined') {
+        if (typeof(Hammer) !== 'undefined') {
 
           var mc = new Hammer($('body').get(0), {
             cssProps: {

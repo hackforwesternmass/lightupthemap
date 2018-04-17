@@ -26,6 +26,50 @@ function responsive_menu_update_8002() {
 }
 
 /**
+ * Add new config to determine whether to use the breakpoint.
+ */
+function responsive_menu_update_8003() {
+  \Drupal::configFactory()
+    ->getEditable('responsive_menu.settings')
+    ->set('allow_admin', FALSE)
+    ->save(TRUE);
+}
+
+/**
+ * Add new config for page wrappers.
+ */
+function responsive_menu_update_8004() {
+  \Drupal::configFactory()
+    ->getEditable('responsive_menu.settings')
+    ->set('wrapper_admin', TRUE)
+    ->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('responsive_menu.settings')
+    ->set('wrapper_theme', FALSE)
+    ->save(TRUE);
+}
+
+/**
+ * Add new config for page wrappers.
+ */
+function responsive_menu_update_8005() {
+  \Drupal::configFactory()
+    ->getEditable('responsive_menu.settings')
+    ->set('extension_keyboard', TRUE)
+    ->save(TRUE);
+}
+
+/**
+ * Add new config for pagedim setting.
+ */
+function responsive_menu_update_8006() {
+  \Drupal::configFactory()
+    ->getEditable('responsive_menu.settings')
+    ->set('pagedim', 'pagedim')
+    ->save(TRUE);
+}
+
+/**
  * Implements hook_requirements().
  */
 function responsive_menu_requirements($phase) {
@@ -39,7 +83,7 @@ function responsive_menu_requirements($phase) {
   $libraries = [
     'mmenu' => [
       'title' => 'mmenu library',
-      'version' => '6.1.0',
+      'version' => '6.1.4',
       'path' => '/libraries/mmenu',
       'version_path' => '/libraries/mmenu/bower.json',
       'severity' => REQUIREMENT_ERROR,

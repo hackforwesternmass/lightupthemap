@@ -7,7 +7,8 @@ html.mm-opened .mm-page {
   width: 100%;
 }
 
-.mm-page {
+.mm-page,
+.mm-wrapper_background body {
   background-color: #ffffff;
 }
 

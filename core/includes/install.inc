@@ -114,9 +114,10 @@ function drupal_install_profile_distribution_name() {
 /**
  * Loads the installation profile, extracting its defined version.
  *
- * @return string Distribution version defined in the profile's .info.yml file.
- *   Defaults to \Drupal::VERSION if no version is explicitly provided
- *   by the installation profile.
+ * @return string
+ *   Distribution version defined in the profile's .info.yml file.
+ *   Defaults to \Drupal::VERSION if no version is explicitly provided by the
+ *   installation profile.
  *
  * @see install_profile_info()
  */
@@ -510,12 +511,12 @@ function drupal_install_config_directories() {
     ]));
   }
   elseif (is_writable($config_directories[CONFIG_SYNC_DIRECTORY])) {
-    // Put a README.md into the sync config directory. This is required so that
+    // Put a README.txt into the sync config directory. This is required so that
     // they can later be added to git. Since this directory is auto-created, we
     // have to write out the README rather than just adding it to the drupal core
     // repo.
     $text = 'This directory contains configuration to be imported into your Drupal site. To make this configuration active, visit admin/config/development/configuration/sync.' . ' For information about deploying configuration between servers, see https://www.drupal.org/documentation/administer/config';
-    file_put_contents(config_get_config_directory(CONFIG_SYNC_DIRECTORY) . '/README.md', $text);
+    file_put_contents(config_get_config_directory(CONFIG_SYNC_DIRECTORY) . '/README.txt', $text);
   }
 }
 
@@ -530,8 +531,11 @@ function drupal_install_config_directories() {
  *
  * @deprecated in Drupal 8.1.x, will be removed before Drupal 9.0.x. Use
  *   config_get_config_directory() and file_prepare_directory() instead.
+ *
+ * @see https://www.drupal.org/node/2501187
  */
 function install_ensure_config_directory($type) {
+  @trigger_error('install_ensure_config_directory() is deprecated in Drupal 8.1.0 and will be removed before Drupal 9.0.0. Use config_get_config_directory() and file_prepare_directory() instead. See https://www.drupal.org/node/2501187.', E_USER_DEPRECATED);
   // The config directory must be defined in settings.php.
   global $config_directories;
   if (!isset($config_directories[$type])) {
