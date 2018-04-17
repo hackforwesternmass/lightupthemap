@@ -110,6 +110,13 @@ class HorizontalMenu extends BlockBase implements ContainerFactoryPluginInterfac
     $media_query = preg_replace('/^(min|max)(.+?)$/', '($1$2)', $media_query);
     $output['#attached']['drupalSettings']['responsive_menu']['mediaQuery'] = $media_query;
 
+    // Add a contextual link to edit the menu.
+    $output['#contextual_links']['menu'] = [
+      'route_parameters' => [
+        'menu' => $menu_name,
+      ],
+    ];
+
     return $output;
   }
 

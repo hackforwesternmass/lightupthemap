@@ -4,10 +4,9 @@ responsive_menu.styling:
     theme:
       css/responsive_menu.css: {}
 
-responsive_menu.javascript:
+responsive_menu.mmenu:
   version: VERSION
   js:
-    js/responsive_menu.config.js: {}
     /libraries/mmenu/dist/jquery.mmenu.all.js: {}
   css:
     theme:
@@ -18,12 +17,19 @@ responsive_menu.javascript:
     - core/jquery.once
     - core/drupal
 
+responsive_menu.config:
+  version: VERSION
+  js:
+    js/responsive_menu.config.js: {}
+  dependencies:
+    - responsive_menu/responsive_menu.mmenu
+
 responsive_menu.superfish:
   version: VERSION
   js:
     /libraries/superfish/dist/js/superfish.min.js: {}
   dependencies:
-    - responsive_menu/responsive_menu.javascript
+    - responsive_menu/responsive_menu.config
 
 responsive_menu.superfish_hoverintent:
   version: VERSION

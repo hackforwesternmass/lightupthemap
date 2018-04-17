@@ -104,6 +104,45 @@ class SettingsForm extends ConfigFormBase {
       '#description' => $this->t('It might be that you want to override all of the css that comes with the responsive_menu module in which case you can disable the loading of the css here and include it instead in your theme.'),
       '#default_value' => \Drupal::config('responsive_menu.settings')->get('include_css'),
     ];
+    // Whether to load the keyboard extension.
+    $form['responsive_menu']['extension_keyboard'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t("Enable the keyboard navigation accessibility extension"),
+      '#description' => $this->t('By enabling the keyboard navigation extension for the mmenu library you will allow navigation by keyboard. Turning this off will affect the accessibility of your site.'),
+      '#default_value' => \Drupal::config('responsive_menu.settings')->get('extension_keyboard'),
+    ];
+    // Whether to allow on admin pages.
+    $form['responsive_menu']['allow_admin'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t("Allow on the admin theme"),
+      '#description' => $this->t("By default the mmenu library is not added to admin pages using the admin theme (if different). By checking this option the code which adds the javascript and the wrapping elements to the page will be added to every page including backend admin pages using the admin theme."),
+      '#default_value' => \Drupal::config('responsive_menu.settings')->get('allow_admin'),
+    ];
+    // Whether to add a theme wrapper for the admin theme.
+    $form['responsive_menu']['wrapper_admin'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t("Add a page wrapper div to the admin theme"),
+      '#description' => $this->t("Many admin themes do not have a wrapping div around all their regions (Seven theme for example) and mmenu requires this div to render properly. Checking this option will add the wrapping div using a preprocess hook."),
+      '#default_value' => \Drupal::config('responsive_menu.settings')->get('wrapper_admin'),
+      '#states' => [
+        // Only show this field when the 'allow_admin' checkbox is enabled.
+        'visible' => [
+          ':input[name="allow_admin"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+    $form['responsive_menu']['theme_compatibility'] = [
+      '#type' => 'fieldset',
+      '#title' => 'Theme compatiblity',
+    ];
+    // Whether to add a theme wrapper for the front end theme.
+    $form['responsive_menu']['theme_compatibility']['wrapper_theme'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t("Add a page wrapper div to the front end theme"),
+      '#description' => $this->t("Some themes don't have a wrapping div around all their regions (Bootstrap theme for example) and mmenu requires this div to render properly. Checking this option will add the wrapping div using a preprocess hook. Alternatively you can do this manually in your theme."),
+      '#default_value' => \Drupal::config('responsive_menu.settings')->get('wrapper_theme'),
+    ];
+
     // Left or right positioned panel.
     $form['responsive_menu']['position'] = [
       '#type' => 'select',
@@ -125,6 +164,18 @@ class SettingsForm extends ConfigFormBase {
       ],
       '#title' => $this->t('Which mmenu theme to use'),
       '#default_value' => \Drupal::config('responsive_menu.settings')->get('off_canvas_theme'),
+    ];
+    // Whether to dim to the page when the menu slides out.
+    $form['responsive_menu']['pagedim'] = [
+      '#type' => 'select',
+      '#options' => [
+        'none' => $this->t('No page dim'),
+        'pagedim' => $this->t('Dim to default page colour'),
+        'pagedim-white' => $this->t('Dim to white'),
+        'pagedim-black' => $this->t('Dim to black'),
+      ],
+      '#title' => $this->t('The colour to dim the page to when the menu slides out'),
+      '#default_value' => \Drupal::config('responsive_menu.settings')->get('pagedim'),
     ];
     // A javascript enhancements fieldset.
     $form['responsive_menu']['js'] = [
@@ -230,6 +281,11 @@ class SettingsForm extends ConfigFormBase {
       ->set('horizontal_wrapping_element', $values['horizontal_wrapping_element'])
       ->set('use_breakpoint', $values['use_breakpoint'])
       ->set('include_css', $values['css'])
+      ->set('extension_keyboard', $values['extension_keyboard'])
+      ->set('allow_admin', $values['allow_admin'])
+      ->set('wrapper_admin', $values['wrapper_admin'])
+      ->set('wrapper_theme', $values['wrapper_theme'])
+      ->set('pagedim', $values['pagedim'])
       ->set('off_canvas_menus', $values['off_canvas_menus'])
       ->set('off_canvas_position', $values['position'])
       ->set('off_canvas_theme', $values['theme'])
@@ -255,7 +311,12 @@ class SettingsForm extends ConfigFormBase {
         ->set('horizontal_media_query', $queries[$values['horizontal_breakpoint']])
         ->save();
 
-      // Generate the breakpoint css file.
+      // Generate the breakpoint css file and remove existing one.
+      $path = _get_breakpoint_css_filepath();
+      // Ensure the directory exists, if not create it.
+      if (file_exists($path . RESPONSIVE_MENU_BREAKPOINT_FILENAME)) {
+        unlink($path . RESPONSIVE_MENU_BREAKPOINT_FILENAME);
+      }
       $breakpoint = \Drupal::config('responsive_menu.settings')->get('horizontal_media_query');
       responsive_menu_generate_breakpoint_css($breakpoint);
     }
@@ -275,6 +336,8 @@ class SettingsForm extends ConfigFormBase {
    *
    * @return array
    *   Keys are menu names (ids) values are the menu labels.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
   protected function getMenuOptions(array $menu_names = NULL) {
     $menus = \Drupal::entityManager()->getStorage('menu')->loadMultiple($menu_names);

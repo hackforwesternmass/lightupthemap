@@ -20,6 +20,8 @@ responsive_menu.settings:
       type: string
     off_canvas_theme:
       type: string
+    pagedim:
+      type: string
     horizontal_superfish:
       type: boolean
     horizontal_superfish_delay:
@@ -35,4 +37,12 @@ responsive_menu.settings:
     breakpoint_css_filepath:
       type: string
     use_breakpoint:
+      type: boolean
+    allow_admin:
+      type: boolean
+    wrapper_admin:
+      type: boolean
+    wrapper_theme:
+      type: boolean
+    extension_keyboard:
       type: boolean

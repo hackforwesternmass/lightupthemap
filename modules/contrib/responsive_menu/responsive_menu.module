@@ -58,6 +58,11 @@ function responsive_menu_theme($existing, $type, $theme, $path) {
     ],
   ];
 
+  $return['responsive_menu_page_wrapper'] = [
+    'template' => 'responsive-menu-page-wrapper',
+    'variables' => ['children' => []],
+  ];
+
   return $return;
 }
 
@@ -68,9 +73,34 @@ function responsive_menu_theme($existing, $type, $theme, $path) {
  */
 function responsive_menu_preprocess_block(&$variables) {
   if ($variables['plugin_id'] == 'responsive_menu_toggle') {
+    $variables['attributes']['class'][] = 'responsive-menu-toggle-wrapper';
     $variables['attributes']['class'][] = 'responsive-menu-toggle';
     // Remove the contextual links from this block.
     unset($variables['title_suffix']['contextual_links']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Used to add an optional page wrapper.
+ */
+function responsive_menu_preprocess_html(&$variables) {
+  // Get the configuration.
+  $config = \Drupal::config('responsive_menu.settings');
+
+  // If this is the admin theme then add the wrapper if requested.
+  if (_current_theme_is_admin()) {
+    if ($config->get('allow_admin') && $config->get('wrapper_admin')) {
+      $variables['page']['#theme_wrappers'][] = 'responsive_menu_page_wrapper';
+    }
+  }
+  else {
+    // If this not the admin theme then only add the wrapper when
+    // the config is enabled.
+    if ($config->get('wrapper_theme') == TRUE) {
+      $variables['page']['#theme_wrappers'][] = 'responsive_menu_page_wrapper';
+    }
   }
 }
 
@@ -80,20 +110,19 @@ function responsive_menu_preprocess_block(&$variables) {
  * Used to place the off-canvas menu and supporting libraries and configuration.
  */
 function responsive_menu_page_bottom(&$page) {
-  // Don't apply this for admin routes.
-  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+  // Get the configuration.
+  $config = \Drupal::config('responsive_menu.settings');
+
+  // A site builder can allow this module to work with the admin theme.
+  if ($config->get('allow_admin') == FALSE && _current_theme_is_admin()) {
     return;
   }
 
-  // Prepare the output of the off-canvas menu.
   $output = [
     '#prefix' => '<div class="off-canvas-wrapper"><div id="off-canvas">',
     '#suffix' => '</div></div>',
     '#pre_render' => ['responsive_menu_off_canvas_pre_render'],
   ];
-
-  // Get the configuration.
-  $config = \Drupal::config('responsive_menu.settings');
 
   // Determine whether the breakpoint code should be used.
   if ($config->get('use_breakpoint')) {
@@ -112,8 +141,11 @@ function responsive_menu_page_bottom(&$page) {
     $output['#attached']['library'][] = 'responsive_menu/responsive_menu.hammerjs';
   }
 
-  // Add the javascript behaviours.
-  $output['#attached']['library'][] = 'responsive_menu/responsive_menu.javascript';
+  // Add the mmenu library.
+  $output['#attached']['library'][] = 'responsive_menu/responsive_menu.mmenu';
+
+  // Add this module's configuration javascript.
+  $output['#attached']['library'][] = 'responsive_menu/responsive_menu.config';
 
   // Add the module's css file if the user does not want to disable it.
   if ($config->get('include_css')) {
@@ -124,7 +156,9 @@ function responsive_menu_page_bottom(&$page) {
   $output['#attached']['drupalSettings']['responsive_menu'] = [
     'position' => $config->get('off_canvas_position'),
     'theme' => $config->get('off_canvas_theme'),
+    'pagedim' => $config->get('pagedim'),
     'breakpoint' => $config->get('horizontal_media_query'),
+    'extension_keyboard' => $config->get('extension_keyboard'),
     'superfish' => [
       'active' => $config->get('horizontal_superfish'),
       'delay' => $config->get('horizontal_superfish_delay'),
@@ -186,7 +220,6 @@ function responsive_menu_off_canvas_pre_render(array $build) {
 
   $combined_tree = [];
   $menu_tree = \Drupal::menuTree();
-  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
   $manipulators = [
     // Show links to nodes that are accessible for the current user.
     ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
@@ -195,14 +228,18 @@ function responsive_menu_off_canvas_pre_render(array $build) {
     // Use the default sorting of menu links.
     ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
   ];
-  // Force the entire tree to be build by setting expandParents to an
-  // empty array.
-  $parameters->expandedParents = [];
   // Iterate over the menus and merge them together.
   foreach ($menus as $menu_name) {
-    $tree_items = $menu_tree->load(trim($menu_name), $parameters);
+    $menu_name = trim($menu_name);
+    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+    // Force the entire tree to be build by setting expandParents to an
+    // empty array.
+    $parameters->expandedParents = [];
+    $tree_items = $menu_tree->load($menu_name, $parameters);
     $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
     $combined_tree = array_merge($combined_tree, $tree_manipulated);
+    $build['#cache']['contexts'][] = 'route.menu_active_trails:' . $menu_name;
+    $build['#cache']['tags'][] = 'config:system.menu.' . $menu_name;
   }
 
   $menu = $menu_tree->build($combined_tree);
@@ -211,6 +248,7 @@ function responsive_menu_off_canvas_pre_render(array $build) {
   \Drupal::ModuleHandler()->alter('responsive_menu_off_canvas_tree', $menu);
 
   $build['#markup'] = \Drupal::service("renderer")->renderRoot($menu);
+
   return $build;
 }
 
@@ -231,6 +269,10 @@ function responsive_menu_form_menu_link_content_form_alter(&$form, FormStateInte
   $menu_link_content = $build_info->getEntity();
   $parent = $menu_link_content->parent->value;
   if (!$parent) {
+    return;
+  }
+  $definition = \Drupal::service('plugin.manager.menu.link')->hasDefinition($parent);
+  if (!$definition) {
     return;
   }
   $parent_link = \Drupal::service('plugin.manager.menu.link')->createInstance($parent);
@@ -392,7 +434,7 @@ function responsive_menu_generate_breakpoint_css($breakpoint) {
   $element = \Drupal::config('responsive_menu.settings')->get('horizontal_wrapping_element');
   // Construct the css to be saved into a file. This needs to be more specific
   // than the module's css otherwise it won't take effect.
-  $css = '@media ' . $breakpoint . ' { ' . $element . '.responsive-menu-block-wrapper { display: block; } div.responsive-menu-toggle { display: none; } }';
+  $css = '@media ' . $breakpoint . ' { ' . $element . '.responsive-menu-block-wrapper { display: block; } .responsive-menu-toggle-wrapper.responsive-menu-toggle { display: none; } }';
   $path = _get_breakpoint_css_filepath();
   // Ensure the directory exists, if not create it.
   if (!file_exists($path)) {
@@ -409,7 +451,28 @@ function responsive_menu_generate_breakpoint_css($breakpoint) {
  * Used to add a javascript file which overrides a method on the toolbar.
  */
 function responsive_menu_preprocess_toolbar(&$variables) {
+  // Get the configuration.
+  $config = \Drupal::config('responsive_menu.settings');
+
+  // If this is the admin theme and allow_admin is disabled then don't
+  // add the override to the toolbar.
+  if (!$config->get('allow_admin') && _current_theme_is_admin()) {
+    return;
+  }
   $variables['#attached']['library'][] = 'responsive_menu/responsive_menu.toolbar';
+}
+
+/**
+ * Implements hook_cache_flush().
+ *
+ * Removes the css file on cache flush.
+ */
+function responsive_menu_cache_flush() {
+  $path = _get_breakpoint_css_filepath();
+  // Ensure the directory exists, if not create it.
+  if (file_exists($path . RESPONSIVE_MENU_BREAKPOINT_FILENAME)) {
+    unlink($path . RESPONSIVE_MENU_BREAKPOINT_FILENAME);
+  }
 }
 
 /**
@@ -420,4 +483,20 @@ function responsive_menu_preprocess_toolbar(&$variables) {
  */
 function _get_breakpoint_css_filepath() {
   return \Drupal::config('responsive_menu.settings')->get('breakpoint_css_filepath');
+}
+
+/**
+ * Checks whether the current theme is the admin theme.
+ *
+ * @return bool
+ *   TRUE if the current theme is the admin theme.
+ */
+function _current_theme_is_admin() {
+  $theme_info = &drupal_static(__FUNCTION__);
+  if (!isset($theme_info)) {
+    $theme_info['system_theme'] = \Drupal::config('system.theme');
+    $theme_info['admin_theme'] = $theme_info['system_theme']->get('admin');
+    $theme_info['current_theme'] = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  }
+  return $theme_info['current_theme'] == $theme_info['admin_theme'] ? TRUE : FALSE;
 }
