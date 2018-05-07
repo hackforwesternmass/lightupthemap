@@ -211,3 +211,34 @@ ul.menu.mm-listview a.is-active {
 .mm-panel a:hover {
   border: none;
 }
+
+//this comes from _lightup.scss, but changed the id to be matched with the horizontal-menu id
+
+#block-horizontalmenu {
+  display: inline-block;
+  font-size: 15px; // 16px > 18px
+  text-transform: uppercase;
+  float: right;
+  margin-top: 25px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  ul.horizontal-menu {
+    li {
+      margin: 2px 5px;
+      border-right: 1px solid #333;
+      padding-right: 18px;
+    }
+  }
+  a, a:link, a:visited {
+    text-decoration: none;
+    color: #000000;
+    cursor: inherit;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+
+#block-horizontalmenu ul.horizontal-menu li:last-child {
+  border-right: 0;
+}
