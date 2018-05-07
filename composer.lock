@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7dcb8250e97f14d77c1c19c19c04ded",
+    "content-hash": "88f6001b7e3a368c264bd2be51045b5d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -994,8 +994,7 @@
             "homepage": "https://www.drupal.org/project/composerize",
             "support": {
                 "source": "http://cgit.drupalcode.org/composerize"
-            },
-            "time": "2018-03-20T01:02:02+00:00"
+            }
         },
         {
             "name": "drupal/core",
