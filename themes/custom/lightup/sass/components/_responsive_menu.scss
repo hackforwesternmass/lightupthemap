@@ -130,13 +130,13 @@ html.mm-opened .mm-page {
   text-transform: uppercase;
   top: 2px;
   left: 40px;
-  color: #fff;
+  color: transparent;
 }
 
 .responsive-menu-toggle-icon:before,
 .responsive-menu-toggle-icon:after,
 .responsive-menu-toggle-icon span.icon {
-  background: #fff;
+  background: #000000;
   content: '';
   display: block;
   width: 20px;
