@@ -69,7 +69,7 @@ a:link,
 a:visited {
   text-decoration: none;
   color: $link;
-  cursor: inherit;
+  cursor: pointer;
 
   &:hover {
     color: $dark-gray;
