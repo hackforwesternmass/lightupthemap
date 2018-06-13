@@ -1,0 +1,11 @@
+name: 'Environment Snapshot'
+description: 'A module that persists data that is usually not kept when versioning (such as custom module configurations). This module should be enabled and updated when necessary.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - features
+  - menu_link_content
+  - menu_ui
+  - responsive_menu
+  - system
